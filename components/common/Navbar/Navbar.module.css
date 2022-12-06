@@ -1,0 +1,18 @@
+.root {
+}
+
+.wrapper {
+	@apply flex mx-auto absolute left-0 right-0 lg:p-8  justify-center;
+}
+/* font-["Arapey"]  */
+.logo {
+  @apply bg-transparent text-white text-[45px] lg:px-20 px-5 mr-auto mt-3 lg:m-auto;
+}
+/* font-['Montserrat'] */
+.links {
+  @apply lg:p-10  text-[16px] font-semibold mt-5 text-white leading-loose;
+}
+
+.mobileMenu {
+  @apply lg:hidden flex w-screen;
+}

@@ -1,0 +1,15 @@
+:root {
+  --site-primary-light: #ffffff;
+  --site-secondary-light: #e3f7ff;
+
+  --site-primary-dark: #000000;
+  --site-secondary-dark: #232329;
+
+  --site-primary-blue: #2b3163;
+  --site-primary-pink: #e7aeac;
+  
+  --site-alt-blue: #cae7df;
+
+  --site-rounded-bg: #FFF4EA;
+  /* --site-primary-green: #; */
+}

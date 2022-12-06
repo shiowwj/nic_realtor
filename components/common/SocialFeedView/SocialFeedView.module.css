@@ -1,0 +1,7 @@
+.root {
+	@apply w-full bg-site-p-blue text-center lg:px-[75px] px-5 py-[30px];
+}
+
+.gridContainer {
+  @apply md:grid flex flex-wrap md:gap-x-16 lg:gap-x-14 lg:grid-cols-3 md:grid-cols-2 lg:w-full justify-items-center gap-y-5; 
+}

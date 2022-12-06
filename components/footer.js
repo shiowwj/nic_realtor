@@ -33,7 +33,7 @@ export default function Header({
 		input: `  w-full text-black bg-white p-3 h-[40px] placeholder-opacity-100 placeholder:capitalize placeholder:text-black  `,
 	};
 	return (
-		<div className="w-screen bg-light-blue">
+		<div className="w-screen bg-site-a-blue">
 			<div className={styles.wrapper}>
 				<div className={styles.logoDiv}>
 					<div className={styles.logo}>{logo ? logo : "logo"}</div>

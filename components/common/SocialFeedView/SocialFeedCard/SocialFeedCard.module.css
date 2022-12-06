@@ -1,0 +1,16 @@
+.root {
+  @apply bg-cover rounded-3xl w-screen md:w-[40vw] lg:w-[30vw] h-[52vh] md:h-[62vh] flex flex-nowrap hover:cursor-pointer;
+}
+
+.card {
+	@apply transition-all p-10 flex flex-wrap h-full items-center w-full rounded-3xl;
+}
+
+.overlay {
+  @apply  bg-slate-200 opacity-80 w-full rounded-3xl flex py-4 px-2 overflow-hidden;
+}
+
+.caption {
+  @apply  text-sm my-auto text-center z-30 opacity-100 font-bold text-site-p-dark;
+}
+

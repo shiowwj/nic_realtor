@@ -1,0 +1,32 @@
+.root {
+
+}
+
+.header {
+ @apply justify-center bg-red text-center flex h-[100vh] text-site-p-light bg-cover bg-center bg-fixed;
+}
+
+.wrapper {
+  @apply h-fit m-auto px-4;
+}
+
+.title {
+  @apply mt-[120px] lg:text-[64px] text-5xl font-extrabold selection:bg-site-p-blue selection:text-site-p-pink;
+  /* @apply pt-[120px] lg:text-[64px] text-5xl leading-[70px]; */
+}
+
+.subheading {
+  @apply lg:w-[90vw] text-[18px] leading-loose my-[25px] font-black text-site-p-light tracking-wide selection:bg-site-p-blue selection:text-site-p-pink;
+}
+
+.ctabutton {
+  @apply rounded-full bg-site-p-blue w-[365px] m-auto h-[55px] shadow-xl flex font-bold;
+}
+
+.icon {
+  @apply h-40 w-8 text-white mt-4 mx-auto animate-bounce;
+}
+
+.highlightSpan{
+  @apply bg-site-p-blue text-site-p-pink
+}

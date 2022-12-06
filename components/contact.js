@@ -3,7 +3,7 @@ import * as Yup from "yup";
 
 export default function InputForm({}) {
 	const styles = {
-		wrapper: `bg-pink text-center lg:p-[70px] p-10 `,
+		wrapper: `bg-site-p-pink text-center lg:p-[70px] p-10 `,
 		title: `font-["Poppins"] mt-[90px] lg:text-[64px] text-5xl font-semibold leading-[70px] lg:mb-[90px] mb-20  `,
 		formWrapper: `flex lg:w-[1160px] justify-between mx-auto gap-5 flex-wrap  font-["Montserrat"] `,
 		inputDiv: `w-[565px]  shrink`,
