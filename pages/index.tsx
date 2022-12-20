@@ -19,6 +19,7 @@ export const getStaticProps = async ({}: GetStaticPropsContext) => {
 	const pageLinks = PAGE_LINKS;
 	const servicesContent = SERVICES;
 	const blogContent = BLOG_LINKS;
+	console.log(igPosts.length)
 	return {
 		props: {
 			heroContent,
@@ -98,7 +99,9 @@ const linkList = [
 		link: "/",
 	},
 ];
-export default function Home({ heroContent, pageLinks, servicesContent, blogContent, igPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
+// igPosts
+export default function Home({ heroContent, pageLinks, servicesContent, blogContent, igPosts}: InferGetStaticPropsType<typeof getStaticProps>) {
+
 	return (
 		<>
 			<Head>

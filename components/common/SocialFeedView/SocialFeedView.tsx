@@ -3,7 +3,8 @@ import cn from "clsx";
 import { IinstragramPost } from "@customTypes/instagram";
 
 import s from "./SocialFeedView.module.css";
-import SocialFeedCard from "./SocialFeedCard";
+import SocialFeedCard from "./SocialFeedImageCard";
+import SocialFeedCaptionCard from "./SocialFeedCaptionCard";
 
 interface Props {
 	className?: string;
@@ -11,14 +12,18 @@ interface Props {
 }
 const SocialFeedView: FC<Props> = ({ className, igPosts }) => {
 	const rootClassName = cn(s.root, className);
+	// console.log('igpost',igPosts)
 	return (
 		<div className={rootClassName}>
 			<div className={s.gridContainer}>
-        {igPosts.map((post) => (
-          <>
-            {(igPosts.indexOf(post) + 2) % 3 === 0 ? <SocialFeedCard igpost={post} key={post.id}/>:<SocialFeedCard className="lg:mt-10" igpost={post} key={post.id}/>}</>
-        ))}
-      </div>
+			<p className={s.postTitle}>{`Our journey`}</p>
+				{igPosts.map((post, idx) =>{ 
+					if (idx === 3) return <SocialFeedCaptionCard className={'hover:translate-x-2'} cardIdx={idx} caption={igPosts[idx+1].caption} key={idx}/>
+					if (idx === 7) return <SocialFeedCaptionCard className={'hover:-translate-x-2'} cardIdx={idx} caption={igPosts[idx-1].caption} key={idx}/>
+					return (
+					<SocialFeedCard igpost={post} key={post.id} cardIdx={idx}/>
+				)})}
+			</div>
 		</div>
 	);
 };

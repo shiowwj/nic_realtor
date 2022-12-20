@@ -1,0 +1,28 @@
+
+.root {
+	@apply text-sm my-auto text-center z-30 font-bold text-site-p-dark w-full flex items-center bg-site-s-light p-6;
+
+}
+
+.root:hover {
+	@apply bg-site-r-bg text-site-p-pink transition-all
+
+}
+
+.caption {
+  /* --max-lines: 3; */
+  @apply w-full; 
+	aspect-ratio: 1/ 1.1;
+  max-height: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.caption::before {
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  position: relative;
+  bottom: 0;
+  right: 0;
+}
