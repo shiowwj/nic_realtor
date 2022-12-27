@@ -21,16 +21,16 @@ const Navbar: FC<NavbarProps> = ({ className, pageLinks, brandLogoImgSrc }) => {
 					<div>
 						{pageLinks["left"].map((val, idx) => {
 							return (
-								<Link key={idx} className={s.links} href={val["link"]}>
+								<Link key={idx} className={cn(s.links, "hidden")} href={val["link"]}>
 									{val["text"]}
 								</Link>
 							);
 						})}
 
-						<a className={s.logo}>{brandLogoImgSrc ? <Image src={brandLogoImgSrc} alt={`brand logo`} /> : "LOGO"}</a>
+						<a className={s.logo}>{brandLogoImgSrc ? <Image src={brandLogoImgSrc} alt={`brand logo`} /> : <span className="font-extrabold tracking-wider text-5xl">{`PROPERTY PROPERLEE`}</span>}</a>
 						{pageLinks["right"].map((val, idx) => {
 							return (
-								<Link key={idx} className={s.links} href={val["link"]}>
+								<Link key={idx} className={cn(s.links, "hidden")} href={val["link"]}>
 									{val["text"]}
 								</Link>
 							);
@@ -38,11 +38,11 @@ const Navbar: FC<NavbarProps> = ({ className, pageLinks, brandLogoImgSrc }) => {
 					</div>
 				</div>
 
-        {/* mobile / hamburger menu */}
-        <div className={s.mobileMenu}>
-          {/* <a className={s.logo}>{brandLogoImgSrc ? <Image src={brandLogoImgSrc} alt={`brand logo`} /> : "LOGO"}</a> */}
-              <Hamburger pageLinks={pageLinks}/>
-        </div>  
+				{/* mobile / hamburger menu */}
+				<div className={s.mobileMenu}>
+					{/* <a className={s.logo}>{brandLogoImgSrc ? <Image src={brandLogoImgSrc} alt={`brand logo`} /> : "LOGO"}</a> */}
+					<Hamburger pageLinks={pageLinks} />
+				</div>
 			</div>
 		</div>
 	);

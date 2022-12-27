@@ -18,7 +18,7 @@ interface Props {
 const ServicesView: FC<Props> = ({ className, title, caption, services }) => {
 	const rootClassName = cn(s.root, className);
 	return (
-		<div className={rootClassName}>
+		<div className={rootClassName} id="services">
 			<Text className={s.title} variant="sectionHeading">
 				{title}
 			</Text>

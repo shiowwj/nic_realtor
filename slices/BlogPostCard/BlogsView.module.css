@@ -1,0 +1,19 @@
+.blogPostItem {
+	@apply lg:w-1/4 rounded-3xl shadow-lg flex flex-col bg-site-p-light;
+}
+
+.coverimage {
+	@apply rounded-t-3xl max-w-full h-auto align-middle border-none;
+}
+
+.coverimageWrapper {
+	@apply w-full;
+}
+
+.blogPostTitle {
+	@apply font-semibold text-2xl md:text-3xl uppercase mt-3 text-left px-5 text-site-p-dark;
+}
+
+.blogPostDescription {
+	@apply text-base text-justify items-center px-5 pt-3 pb-5 text-site-p-dark;
+}

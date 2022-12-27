@@ -1,0 +1,27 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": "cover",
+      "description": "pony"
+    },
+    "slice_type": "cta_block"
+  },
+  {
+    "variation": "withCtaButton",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": "Need a Properlee?",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "cta_button_text": "Learn More"
+    },
+    "slice_type": "cta_block"
+  }
+]

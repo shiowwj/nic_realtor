@@ -1,0 +1,7 @@
+.root {
+  @apply justify-center gap-10 text-center text-site-p-dark lg:max-w-7xl mx-auto p-10
+}
+
+.contactBlock {
+  @apply col-span-full md:col-span-4 md:mt-0 mt-5 border p-5 rounded-lg hover:bg-site-s-light hover:text-site-p-dark
+}

@@ -1,18 +1,25 @@
 .root {
-	@apply text-center bg-white text-black mx-auto px-8 md:px-12 py-24 bg-site-p-pink w-screen;
+	@apply text-center text-black;
+}
+
+.rootBlog {
+	@apply mx-auto px-8 md:px-12 py-24 bg-site-p-pink;
 	background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 	background-image: url("/layered-waves-haikei.svg");
+}
 
+.rootConsult{
+	@apply mx-auto py-8 bg-site-p-light px-6;
 }
 
 .title {
-	@apply text-4xl md:text-5xl leading-[70px] my-4 font-bold mb-8 pt-80 text-site-p-light;
+	@apply text-4xl md:text-5xl leading-[70px] font-bold py-16;
 }
 
 .blogPostsContainer {
-	@apply flex justify-center lg:text-left shrink gap-20 md:gap-12 flex-wrap;
+	@apply flex justify-center lg:text-left shrink gap-20 md:gap-4 flex-wrap;
 }
 /* flex-wrap-reverse */
 
