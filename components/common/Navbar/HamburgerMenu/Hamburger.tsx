@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import cn from "clsx";
 import Link from "next/link";
 
@@ -11,9 +11,20 @@ interface HamburgerProps {
 
 const Hamburger: FC<HamburgerProps> = ({ className, pageLinks }) => {
 	const rootClassName = cn(s.root, className);
+	const [handleMenuState, setHandleMenuState] = useState(false)
+	const handleMenuItemClick = () => {
+		setHandleMenuState(false)
+	}
+	const handleMenuClick = () => {
+		if (handleMenuState) {
+			setHandleMenuState(false)
+		} else {
+			setHandleMenuState(true)
+		}
+	}
 	return (
 		<div className={rootClassName}>
-			<input type="checkbox" className={s.navigation__checkbox} id="nav-toggle" />
+			<input type="checkbox" className={s.navigation__checkbox} id="nav-toggle" checked={handleMenuState} onClick={handleMenuClick}/>
 			<label htmlFor="nav-toggle" className={s.navigation__button}>
 				<span className={s.navigation__icon} aria-label="toggle navigation menu"></span>
 			</label>
@@ -23,7 +34,7 @@ const Hamburger: FC<HamburgerProps> = ({ className, pageLinks }) => {
 				<ul className={s.navigation__list}>
 					{pageLinks["left"].map((val, idx) => {
 						return (
-							<li key={idx} className={s.navigation__item}>
+							<li key={idx} className={s.navigation__item} onClick={handleMenuItemClick}>
 								<Link className={s.navigation__link} href={val["link"]}>
 									<span className="">{val["text"]}</span>
 								</Link>
@@ -32,7 +43,7 @@ const Hamburger: FC<HamburgerProps> = ({ className, pageLinks }) => {
 					})}
 					{pageLinks["right"].map((val, idx) => {
 						return (
-							<li key={idx} className={s.navigation__item}>
+							<li key={idx} className={s.navigation__item} onClick={handleMenuItemClick}>
 								<Link className={s.navigation__link} href={val["link"]}>
 									<span className="">{val["text"]}</span>
 								</Link>

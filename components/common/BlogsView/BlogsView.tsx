@@ -39,7 +39,7 @@ const BlogsView: FC<Props> = ({ className, slice, variant }) => {
 					<SliceZone slices={slice} components={components} />
 				</div>
 			) : (
-				<div className={cn(rootClassName, s.rootConsult)}>
+				<div className={cn(rootClassName, s.rootConsult)} id={`consult`}>
 
 					{slice[0].primary.title ? (
 						<PrismicRichText

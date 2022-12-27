@@ -9,27 +9,27 @@ export const HERO_SECTION = {
 export const PAGE_LINKS = {
   left: [
     {
-      link: '/services',
+      link: '#services',
       text: 'Services',
       href: 'services'
     },
     {
-      link: '/contact',
+      link: '#contact-form',
       text: 'Contact',
       href: 'contact'
     }
   ],
   right: [
     {
-      link: '/about',
-      text: 'About',
+      link: '#consult',
+      text: 'Consult',
       href: 'consultation'
     },
-    {
-      link: '/research',
-      text: 'Research',
-      href: 'articles'
-    }
+    // {
+    //   link: '#research',
+    //   text: 'Research',
+    //   href: 'articles'
+    // }
   ]
 }
 
