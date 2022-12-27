@@ -1,32 +1,31 @@
 .root {
-
 }
 
 .header {
- @apply justify-center bg-red text-center flex h-[100vh] bg-cover bg-center bg-fixed ;
+	@apply justify-center bg-red text-center flex h-[100vh] bg-cover bg-center bg-fixed;
 }
 
 .wrapper {
-  @apply h-fit m-auto px-4;
+	@apply h-fit m-auto px-4;
 }
 
 .title {
-  @apply mt-[120px] lg:text-[64px] text-5xl font-extrabold selection:bg-site-p-blue selection:text-site-p-pink text-site-p-light;
-  /* @apply pt-[120px] lg:text-[64px] text-5xl leading-[70px]; */
+	@apply mt-[120px] lg:text-[64px] text-5xl font-extrabold selection:bg-site-p-blue selection:text-site-p-pink text-site-p-light;
+	/* @apply pt-[120px] lg:text-[64px] text-5xl leading-[70px]; */
 }
 
 .subheading {
-  @apply lg:w-[90vw] text-[18px] leading-loose my-[25px] font-black text-site-p-light tracking-wide selection:bg-site-p-blue selection:text-site-p-pink;
+	@apply lg:w-[90vw] text-[18px] leading-loose my-[25px] font-black text-site-p-light tracking-wide selection:bg-site-p-blue selection:text-site-p-pink;
 }
 
 .ctabutton {
-  @apply rounded-full bg-site-p-blue w-[90vw] md:w-1/3 m-auto h-fit p-4 shadow-xl flex font-bold text-site-p-pink hover:text-site-s-light;
+	@apply rounded-lg bg-site-p-blue w-[90vw] md:w-1/3 m-auto h-fit p-4 shadow-xl flex font-bold text-site-p-pink hover:text-site-s-light text-lg md:text-2xl py-3 px-5;
 }
 
 .icon {
-  @apply h-40 w-8 text-white mt-4 mx-auto animate-bounce;
+	@apply h-40 w-8 text-white mt-4 mx-auto animate-bounce;
 }
 
-.highlightSpan{
-  @apply bg-site-p-blue text-site-p-pink
+.highlightSpan {
+	@apply bg-site-p-blue text-site-p-pink;
 }

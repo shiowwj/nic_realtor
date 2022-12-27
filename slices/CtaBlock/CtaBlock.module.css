@@ -11,5 +11,5 @@
 }
 
 .ctabutton {
-	@apply rounded-lg bg-site-p-blue w-[90vw] md:w-3/6 lg:w-1/5 m-auto h-[8vh] p-12 shadow-xl text-site-p-pink hover:text-site-s-light text-2xl;
+	@apply rounded-lg bg-site-p-blue w-[90vw] md:w-3/6 lg:w-1/5 m-auto h-[8vh] py-3 px-5 shadow-xl text-site-p-pink hover:text-site-s-light text-lg md:text-2xl;
 }

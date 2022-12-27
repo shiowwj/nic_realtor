@@ -43,17 +43,36 @@ const ContactForm: FC<Props> = ({ className }) => {
 	const onErrors = (errors: any) => {
 		// console.error('form errors', errors)
 	};
-	console.log(errors);
+	// console.log(errors);
 	return (
 		<section className={rootClassName} id={`contact-form`}>
 			<div className={s.title}>{`Let's work together`}</div>
-			<div className="px-4 sm:px-6 flex-1 pb-2">
+			<div className="flex-1 pb-2">
 				<form onSubmit={handleSubmit(onSubmit, onErrors)}>
 					<div className={s.sectionRoot}>
 						<div className="px-4 sm:px-6 flex-1 pb-2">
+							{/* Name */}
 							<div className="grid gap-3 grid-flow-row grid-cols-12">
-								{/* consultation type */}
 								<div className={cn(s.fieldset, "col-span-full")}>
+									<label htmlFor="name" className="hidden mb-2 text-sm font-medium text-site-s-dark">
+										Name
+									</label>
+									<input
+										className={handleDisableFormSubmit ? s.inputDisable : s.input}
+										type="text"
+										autoComplete=""
+										placeholder="How do I address you?*"
+										disabled={handleDisableFormSubmit}
+										{...register("name", { required: "This is required" })}
+									/>
+									<ErrorMessage errors={errors} name="name" render={({ message }) => <ErrorMsg message={message} />} />
+								</div>
+							</div>
+
+							{/* phone number + service */}
+							<div className="grid gap-3 grid-flow-row grid-cols-12 item-end">
+
+								<div className={cn(s.fieldset, "col-span-6")}>
 									<label htmlFor="typeOfConsultation" className="hidden mb-2 text-sm font-medium text-site-s-dark">
 										Type of Consultation
 									</label>
@@ -73,22 +92,7 @@ const ContactForm: FC<Props> = ({ className }) => {
 									</select>
 									<ErrorMessage errors={errors} name="typeOfConsultation" render={({ message }) => <ErrorMsg message={message} />} />
 								</div>
-							</div>
-							<div className="grid gap-3 grid-flow-row grid-cols-12">
-								<div className={cn(s.fieldset, "col-span-6")}>
-									<label htmlFor="name" className="hidden mb-2 text-sm font-medium text-site-s-dark">
-										Name
-									</label>
-									<input
-										className={handleDisableFormSubmit ? s.inputDisable : s.input}
-										type="text"
-										autoComplete=""
-										placeholder="How do I address you?*"
-										disabled={handleDisableFormSubmit}
-										{...register("name", { required: "This is required" })}
-									/>
-									<ErrorMessage errors={errors} name="name" render={({ message }) => <ErrorMsg message={message} />} />
-								</div>
+
 								<div className={cn(s.fieldset, "col-span-6")}>
 									<label htmlFor="phone" className="hidden mb-2 text-sm font-medium text-site-s-dark">
 										Phone Number
@@ -104,6 +108,12 @@ const ContactForm: FC<Props> = ({ className }) => {
 									<ErrorMessage errors={errors} name="phone" render={({ message }) => <ErrorMsg message={message} />} />
 								</div>
 							</div>
+
+								{/* consultation type */}
+							{/* <div className="grid gap-3 grid-flow-row grid-cols-12">
+
+							</div> */}
+							{/* email */}
 							<div className="grid gap-3 grid-flow-row grid-cols-12">
 								<div className={cn(s.fieldset, "col-span-8")}>
 									<label htmlFor="email" className="hidden mb-2 text-sm font-medium text-site-s-dark">
@@ -120,6 +130,8 @@ const ContactForm: FC<Props> = ({ className }) => {
 									<ErrorMessage errors={errors} name="email" render={({ message }) => <ErrorMsg message={message} />} />
 								</div>
 							</div>
+
+							{/* message */}
 							<div className="grid gap-3 grid-flow-row grid-cols-12">
 								<div className={cn(s.fieldset, "col-span-full")}>
 									<label htmlFor="message" className="hidden mb-2 text-sm font-medium text-site-s-dark">

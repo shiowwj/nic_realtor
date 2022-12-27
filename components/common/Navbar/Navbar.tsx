@@ -27,7 +27,7 @@ const Navbar: FC<NavbarProps> = ({ className, pageLinks, brandLogoImgSrc }) => {
 							);
 						})}
 
-						<a className={s.logo}>{brandLogoImgSrc ? <Image src={brandLogoImgSrc} alt={`brand logo`} /> : <span className="font-extrabold tracking-wider text-5xl">{`PROPERTY PROPERLEE`}</span>}</a>
+						<a className={s.logo}>{brandLogoImgSrc ? <Image src={brandLogoImgSrc} alt={`brand logo`} /> : <span className="font-extrabold tracking-wider text-5xl">{`NICOLE LEE`}</span>}</a>
 						{pageLinks["right"].map((val, idx) => {
 							return (
 								<Link key={idx} className={cn(s.links, "hidden")} href={val["link"]}>

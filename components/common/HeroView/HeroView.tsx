@@ -31,8 +31,8 @@ const HeroView: FC<Props> = ({ children, className, imgUrl, title, link, subhead
 				className={s.header}
 			>
 				<div className={s.wrapper}>
-					<Text className={s.title} variant="heading">
-						<span className={s.highlightSpan}>{title}</span>
+					<Text className={cn(s.title, 'leading-5')} variant="heading">
+						<span className="font-extrabold text-transparent text-7xl bg-clip-text bg-gradient-to-r to-site-p-blue from-site-p-pink">{title}</span>
 					</Text>
 					<Text className={s.subheading} variant="body">
 						<span className={s.highlightSpan}>{subheading}</span>

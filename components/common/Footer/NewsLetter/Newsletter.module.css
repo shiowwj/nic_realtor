@@ -1,5 +1,5 @@
 .root {
-	@apply py-8 px-8 mx-auto max-w-screen-xl lg:py-12 lg:px-6;
+	@apply py-8 md:px-8 mx-auto max-w-screen-xl lg:py-12 lg:px-6;
 }
 
 .wrapper {
@@ -7,11 +7,11 @@
 }
 
 .newslettertitle {
-	@apply mb-4 text-3xl tracking-tight font-extrabold text-site-p-dark sm:text-4xl;
+	@apply text-3xl tracking-tight font-extrabold text-site-s-dark sm:text-4xl;
 }
 
 .newsletterdescription {
-	@apply mx-auto mb-8 max-w-2xl font-light text-site-s-dark md:mb-12 sm:text-xl;
+	@apply mx-auto my-8 max-w-2xl font-light text-site-s-dark md:mb-12 sm:text-xl italic;
 }
 
 .fieldset {
@@ -19,14 +19,15 @@
 }
 
 .input {
-	@apply block p-3 pl-10 w-full text-sm text-site-p-dark bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-site-r-bg focus:border-site-r-bg;
+	@apply block p-3 pl-10 w-full text-sm text-site-p-dark bg-site-s-light rounded-lg border border-site-s-dark sm:rounded-none sm:rounded-l-lg focus:ring-site-r-bg focus:border-l-site-r-bg h-[8vh];
 }
+
 .inputDisable {
-	@apply block p-3 pl-10 w-full text-sm text-site-p-dark bg-gray-50 rounded-lg border border-gray-300  sm:rounded-lg focus:ring-site-r-bg focus:border-site-r-bg;
+	@apply block p-3 pl-10 w-full text-sm text-site-p-dark bg-site-s-light rounded-lg border border-site-s-dark  sm:rounded-lg sm:rounded-l-lg focus:ring-site-r-bg focus:border-l-site-r-bg  h-[8vh];
 }
 
 .submitbutton {
-	@apply py-3 px-5 w-full text-sm font-medium text-center text-site-s-dark rounded-lg border cursor-pointer bg-site-p-pink border-site-a-blue sm:rounded-none sm:rounded-r-lg hover:bg-site-p-blue focus:ring-4 focus:ring-site-p-pink hover:text-site-p-light;
+	@apply py-3 px-5 w-full text-base md:text-xl font-medium text-center text-site-s-dark rounded-lg border cursor-pointer bg-site-p-pink border-site-a-blue sm:rounded-none sm:rounded-r-lg hover:bg-site-p-blue focus:ring-4 focus:ring-site-p-pink hover:text-site-p-light h-[8vh];
 }
 
 .privacyBlock {

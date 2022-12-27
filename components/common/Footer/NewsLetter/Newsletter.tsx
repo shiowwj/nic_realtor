@@ -47,8 +47,9 @@ const Newsletter: FC<Props> = ({ className }) => {
 		<div className={rootClassName}>
 			<div className={s.wrapper}>
 				<h2 className={s.newslettertitle}>
-					Newsletter<span className="text-lg ml-3"> (no spam, i promise)</span>{" "}
+					Sign up for my Newsletter{" "}
 				</h2>
+				<span className="text-lg font-extralight"> {`(no spam, i promise)`}</span>
 				<p className={s.newsletterdescription}>Get informed on the current market trends & practical real estate investment insights</p>
 				<form onSubmit={handleSubmit(onSubmit, onErrors)}>
 					<div className={s.fieldset}>
@@ -68,7 +69,7 @@ const Newsletter: FC<Props> = ({ className }) => {
 								type="email"
 								id="email"
 								disabled={handleDisableFormSubmit}
-								{...register("email", { required: "This is required" })}
+								{...register("email", { required: "Only good stuff. Promise" })}
 							/>
 							
 						</div>

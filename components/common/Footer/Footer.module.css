@@ -1,5 +1,5 @@
 .root {
-  @apply justify-center gap-10 text-center text-site-p-dark lg:max-w-7xl mx-auto p-10
+  @apply justify-center gap-10 text-center text-site-p-dark lg:max-w-7xl mx-auto py-10 px-2 md:px-10
 }
 
 .contactBlock {
