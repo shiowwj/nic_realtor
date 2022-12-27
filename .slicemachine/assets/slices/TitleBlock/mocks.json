@@ -1,0 +1,27 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": "property",
+      "description": "people"
+    },
+    "slice_type": "title_block"
+  },
+  {
+    "variation": "withButton",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": "parent",
+      "description": "diagram",
+      "button_text": "over"
+    },
+    "slice_type": "title_block"
+  }
+]

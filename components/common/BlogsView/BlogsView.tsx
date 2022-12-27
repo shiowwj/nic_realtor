@@ -3,40 +3,63 @@ import { FC } from "react";
 import { Text } from "@components/ui";
 import cn from "clsx";
 
-import s from "./BlogsView.module.css" 
+import s from "./BlogsView.module.css";
+import { PrismicRichText, SliceZone } from "@prismicio/react";
+import { components } from "slices";
 
 interface Props {
 	className?: string;
-	title: string;
-	caption: string;
-	blogPosts: Record<string, string | number>[];
+	slice: any;
+	variant?: "blog" | "consult";
 }
 
 // buy, sell, rent, property wealth planning
 
-const BlogsView: FC<Props> = ({ className, title, caption, blogPosts }) => {
+const BlogsView: FC<Props> = ({ className, slice, variant }) => {
 	const rootClassName = cn(s.root, className);
 	return (
-		<div className={rootClassName}>
-			<Text className={s.title} variant="sectionHeading">
-				{title}
-			</Text>
-			<div className={s.blogPostsContainer}>
-				{blogPosts.map((blogItem, idx) => (
-					<div className={s.blogPostItem} key={idx}>
-						<div className={s.coverimageWrapper}>
-							<img
-								className={s.coverimage}
-								src={blogItem["imgSrc"] as string}
-								alt={`${blogItem["title"]} image`}
-							/>
-						</div>
-						<div className={s.blogPostTitle}>{blogItem["title"]}</div>
-						<div className={s.blogPostDescription}>{blogItem["description"]}</div>
-					</div>
-				))}
-			</div>
-		</div>
+		<>
+			{variant === "blog" ? (
+				<div className={cn(rootClassName, s.rootBlog)}>
+					{slice[0].primary.title ? (
+						<PrismicRichText
+							field={slice[0].primary.title}
+							components={{
+								heading1: ({ children }) => (
+									<Text className={cn(s.title, ' mt-60 pb-24 pt-80 my-4  text-site-p-light')} variant="sectionHeading">
+										{children}
+									</Text>
+								),
+							}}
+						/>
+					) : (
+						`Template slice, update me!`
+					)}
+
+					<SliceZone slices={slice} components={components} />
+				</div>
+			) : (
+				<div className={cn(rootClassName, s.rootConsult)}>
+
+					{slice[0].primary.title ? (
+						<PrismicRichText
+							field={slice[0].primary.title}
+							components={{
+								heading1: ({ children }) => (
+									<Text className={cn(s.title, 'py-16 text-site-p-dark')} variant="sectionHeading">
+										{children}
+									</Text>
+								),
+							}}
+						/>
+					) : (
+						`Template slice, update me!`
+					)}
+
+					<SliceZone slices={slice} components={components} />
+				</div>
+			)}
+		</>
 	);
 };
 export default BlogsView;

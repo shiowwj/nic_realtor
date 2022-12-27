@@ -10,21 +10,25 @@ export const PAGE_LINKS = {
   left: [
     {
       link: '/services',
-      text: 'Services'
+      text: 'Services',
+      href: 'services'
     },
     {
       link: '/contact',
-      text: 'Contact'
+      text: 'Contact',
+      href: 'contact'
     }
   ],
   right: [
     {
       link: '/about',
-      text: 'About'
+      text: 'About',
+      href: 'consultation'
     },
     {
       link: '/research',
-      text: 'Research'
+      text: 'Research',
+      href: 'articles'
     }
   ]
 }

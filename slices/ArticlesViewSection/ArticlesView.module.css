@@ -1,0 +1,38 @@
+.root {
+	@apply text-center bg-white text-black mx-auto px-8 md:px-12 py-24 bg-site-p-pink w-screen;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-image: url("/layered-waves-haikei.svg");
+}
+
+.title {
+	@apply text-4xl md:text-5xl leading-[70px] my-4 font-bold mb-8 pt-80 text-site-p-light;
+}
+
+.blogPostsContainer {
+	@apply flex justify-center lg:text-left shrink gap-20 md:gap-12 flex-wrap text-site-p-dark; 
+}
+/* flex-wrap-reverse */
+
+.blogPostItem {
+	@apply lg:w-[30%] rounded-3xl shadow-lg flex flex-col bg-site-p-light;
+}
+/* flex-grow  */
+/* hover:bg-site-p-pink */
+
+.coverimageWrapper {
+	@apply w-full;
+}
+
+.coverimage {
+	@apply rounded-t-3xl max-w-full h-auto align-middle border-none;
+}
+
+.blogPostTitle {
+	@apply font-semibold text-2xl md:text-3xl uppercase mt-3 text-left px-5;
+}
+
+.blogPostDescription {
+	@apply text-base text-justify items-center px-5 pt-3 pb-5;
+}

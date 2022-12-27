@@ -1,0 +1,39 @@
+.root {
+	@apply bg-site-p-pink text-center lg:p-16 px-10 pt-10 pb-48;
+}
+
+.title {
+	@apply mt-24 lg:text-6xl text-5xl font-bold  lg:mb-24 mb-20 uppercase;
+}
+
+.input {
+	@apply border-[#717171] w-full text-black bg-transparent px-3 py-3 placeholder-opacity-100 placeholder:capitalize placeholder:text-black  border-b-2;
+}
+
+.inputDisable {
+	@apply border-[#717171] w-full text-site-s-dark bg-site-p-light px-3 py-3 placeholder-opacity-100 placeholder:capitalize placeholder:text-black  border-b-2;
+}
+
+.fieldset {
+	@apply flex flex-col my-3;
+}
+
+.contactButton {
+	@apply text-2xl rounded-lg bg-site-p-blue w-[90vw] md:w-fit m-auto h-[8vh] p-8 shadow-xl text-site-p-light hover:text-site-p-dark hover:bg-site-r-bg;
+}
+
+.contactButtonDisabled {
+	@apply text-2xl rounded-lg bg-site-p-blue w-[90vw] md:w-fit m-auto h-[8vh] p-8 shadow-xl text-site-p-light hover:cursor-none cursor-none hover:bg-site-p-blue hover:text-site-p-light;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.removeWebkit::-webkit-outer-spin-button,
+.removeWebkit::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+.removeWebkit[type="number"] {
+	-moz-appearance: textfield;
+}

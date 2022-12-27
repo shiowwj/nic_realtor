@@ -14,7 +14,7 @@ const SocialFeedView: FC<Props> = ({ className, igPosts }) => {
 	const rootClassName = cn(s.root, className);
 	// console.log('igpost',igPosts)
 	return (
-		<div className={rootClassName}>
+		<div className={cn(rootClassName, s.bgeffect)}>
 			<div className={s.gridContainer}>
 			<p className={s.postTitle}>{`Our journey`}</p>
 				{igPosts.map((post, idx) =>{ 

@@ -1,0 +1,344 @@
+{
+  "slices": {
+    "components": {
+      "articles_view_section": {
+        "library": "slices",
+        "id": "articles_view_section",
+        "name": "ArticlesViewSection",
+        "description": "ArticlesViewSection",
+        "model": {
+          "id": "articles_view_section",
+          "type": "SharedSlice",
+          "name": "ArticlesViewSection",
+          "description": "ArticlesViewSection",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ArticlesViewSection",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {
+                "articleviewsectionimage": {
+                  "type": "Image",
+                  "config": {
+                    "label": "ArticleViewSectionImage",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "articleviewcardtitle": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "ArticleViewCardTitle",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "articleviewcarddescription": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "ArticleViewCardDescription",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "articleviewsectionimage": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca"
+                },
+                "articleviewcardtitle": [
+                  {
+                    "type": "heading1",
+                    "text": "Should",
+                    "spans": []
+                  }
+                ],
+                "articleviewcarddescription": [
+                  {
+                    "type": "paragraph",
+                    "text": "Quis velit velit culpa nulla do aliqua do qui commodo. Laborum occaecat consectetur nisi in duis Lorem. Excepteur nulla veniam cupidatat.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Poetry",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Aliqua esse nostrud aliquip dolor in consectetur eiusmod ex ea voluptate incididunt commodo exercitation minim. Laborum voluptate labore aute ad commodo cillum nostrud officia minim do aute elit ea nisi laborum. Non veniam laboris amet et sit esse pariatur est pariatur.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "articles_view_section"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/weijunshiow/Desktop/Projects/jobs/3_Nic_realtor_site/website/.slicemachine/assets/slices/ArticlesViewSection/default/preview.png",
+            "width": 1280,
+            "height": 800
+          }
+        }
+      },
+      "blog_post_card": {
+        "library": "slices",
+        "id": "blog_post_card",
+        "name": "BlogPostCard",
+        "description": "BlogPostCard",
+        "model": {
+          "id": "blog_post_card",
+          "type": "SharedSlice",
+          "name": "BlogPostCard",
+          "description": "BlogPostCard",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "BlogPostCard",
+              "primary": {
+                "cardImage": {
+                  "type": "Image",
+                  "config": {
+                    "label": "image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "cardImage": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f"
+              },
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Knowledge",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Reprehenderit et Lorem veniam mollit excepteur est aliquip tempor ad ullamco in. Est veniam irure consequat anim est non culpa elit velit aliqua proident elit aute. Nulla irure ullamco et Lorem deserunt labore eiusmod est laborum irure aliquip dolore.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "blog_post_card"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/weijunshiow/Desktop/Projects/jobs/3_Nic_realtor_site/website/.slicemachine/assets/slices/BlogPostCard/default/preview.png",
+            "width": 1280,
+            "height": 800
+          }
+        }
+      },
+      "cta_block": {
+        "library": "slices",
+        "id": "cta_block",
+        "name": "CtaBlock",
+        "description": "CtaBlock",
+        "model": {
+          "id": "cta_block",
+          "type": "SharedSlice",
+          "name": "CtaBlock",
+          "description": "CtaBlock",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "CtaBlock",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Description",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "withCtaButton",
+              "name": "With CTA Button",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "CtaBlock",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Description",
+                    "placeholder": ""
+                  }
+                },
+                "cta_button_text": {
+                  "type": "Text",
+                  "config": {
+                    "label": "CTA Button Text",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "title": "cover",
+              "description": "pony"
+            },
+            "slice_type": "cta_block"
+          },
+          "withCtaButton": {
+            "variation": "withCtaButton",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "title": "Need a Properlee?",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "cta_button_text": "Learn More"
+            },
+            "slice_type": "cta_block"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/weijunshiow/Desktop/Projects/jobs/3_Nic_realtor_site/website/.slicemachine/assets/slices/CtaBlock/default/preview.png",
+            "width": 1280,
+            "height": 800
+          },
+          "withCtaButton": {
+            "path": "/Users/weijunshiow/Desktop/Projects/jobs/3_Nic_realtor_site/website/.slicemachine/assets/slices/CtaBlock/withCtaButton/preview.png",
+            "width": 1280,
+            "height": 800
+          }
+        }
+      }
+    }
+  }
+}
