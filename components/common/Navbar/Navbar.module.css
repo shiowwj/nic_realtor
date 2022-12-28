@@ -6,7 +6,7 @@
 }
 /* font-["Arapey"]  */
 .logo {
-  @apply bg-transparent text-white text-[45px] lg:px-20 px-5 mr-auto mt-3 lg:m-auto;
+  @apply bg-transparent text-white z-50 flex justify-center fixed md:sticky;
 }
 /* font-['Montserrat'] */
 .links {

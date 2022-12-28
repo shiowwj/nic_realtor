@@ -9,11 +9,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		if (req.method === "POST") {
 			const createRecord = await AirtableCreateContact(req.body);
 			if (!createRecord["recordId"]) {
-				return res.status(402).json({ message: "No record created" });
+				return res.status(402).json({ message: "No record created for contact form" });
 			}
 			return res.status(200).json({ message: createRecord["recordId"] });
 		}
 	} catch (error) {
-		res.status(400).json({ message: "Something went wrong @createairtablerecord handler", errorStack: error });
+		res.status(400).json({ message: "Something went wrong @contact-form handler", errorStack: error });
 	}
 }

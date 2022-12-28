@@ -26,7 +26,7 @@ const Hamburger: FC<HamburgerProps> = ({ className, pageLinks }) => {
 		<div className={rootClassName}>
 			<input type="checkbox" className={s.navigation__checkbox} id="nav-toggle" checked={handleMenuState} onChange={handleMenuClick}/>
 			<label htmlFor="nav-toggle" className={s.navigation__button}>
-				<span className={s.navigation__icon} aria-label="toggle navigation menu"></span>
+				<span className={s.navigation__icon} aria-label="toggle navigation menu icon"></span>
 			</label>
 			<div className={s.navigation__background}></div>
 

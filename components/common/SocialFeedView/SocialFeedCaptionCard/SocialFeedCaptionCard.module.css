@@ -1,6 +1,6 @@
 
 .root {
-	@apply text-sm my-auto text-center z-30 font-bold text-site-p-dark w-full flex items-center bg-site-s-light p-6;
+	@apply text-sm my-auto text-center z-30 font-bold rounded-3xl text-site-p-dark w-full flex items-center bg-site-s-light p-6;
 
 }
 
@@ -14,7 +14,7 @@
   @apply w-full; 
 	aspect-ratio: 1/ 1.1;
   max-height: 90%;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-overflow: ellipsis;
 }
 

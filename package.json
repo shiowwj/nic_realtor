@@ -8,10 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "prettier-fix": "prettier --write .",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
+    "@next/bundle-analyzer": "^13.1.1",
     "@prismicio/client": "^6.7.3",
     "@prismicio/helpers": "^2.3.8",
     "@prismicio/next": "^1.0.2",
@@ -31,6 +33,7 @@
     "react-icons": "^4.6.0",
     "react-instagram-embed": "^3.0.0",
     "react-merge-refs": "^2.0.1",
+    "sharp": "^0.31.3",
     "tls": "^0.0.1",
     "yup": "^0.32.11"
   },

@@ -3,6 +3,7 @@ import { FC, useState } from "react";
 import cn from "clsx";
 
 import s from "./SocialFeedImageCard.module.css";
+import Image from "next/image";
 
 interface Props {
 	className?: string;
@@ -20,26 +21,29 @@ const SocialFeedCard: FC<Props> = ({ className, igpost, cardIdx }) => {
 	const onMouseLeave = () => {
 		setTimeout(() => setIsHovered(false), 400);
 	};
-  const onClickPost =() => {
-    window.open(igpost?.permalink)
-  }
+	const onClickPost = () => {
+		window.open(igpost?.permalink);
+	};
 
-	const cardGap = (idx: number):boolean => {
-		if ((idx + 3) % 3 === 0) return false
-		return true
-	}
+	const cardGap = (idx: number): boolean => {
+		if ((idx + 3) % 3 === 0) return false;
+		return true;
+	};
 
 	return (
 		<div
-			className={cn(rootClassName, cardGap(cardIdx) ? 'lg:mt-10': '')}
-			style={{
-				backgroundImage: igpost?.mediaUrl ? `url(${igpost.mediaUrl})` : `url(/blog-image.jpg)`,
-			}}
-			// onMouseEnter={onMouseEnter}
+			className={cn(rootClassName, cardGap(cardIdx) ? "lg:mt-10" : "")}
 			onMouseLeave={onMouseLeave}
-      // onClick={onClickPost}
 			onScroll={onMouseEnter}
 		>
+			<Image
+				src={`/api/imageproxy?url=${encodeURIComponent(igpost?.mediaUrl ? igpost?.mediaUrl : "/blog-image.jpg")}`}
+				// src={igpost?.mediaUrl ? igpost?.mediaUrl : "/blog-image.jpg"}
+				alt={"ig post"}
+				quality={100}
+				fill
+				className="rounded-3xl"
+			/>
 			<div className={cn(s.card, isHovering ? s.overlay : "")}>{isHovering ? <p className={s.caption}>{igpost?.caption}</p> : <></>}</div>
 		</div>
 	);

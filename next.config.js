@@ -8,6 +8,20 @@ const nextConfig = {
     }
     return config;
   },
+  images:{
+    // domains:['scontent-xsp1-3.cdninstagram.com', 'scontent-xsp1-1.cdninstagram.com', 'scontent-xsp1-2.cdninstagram.com','scontent-xsp1-3.cdninstagram.com', ''],
+    // remotePatterns/
+  },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 };
 
-module.exports = nextConfig;
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = withBundleAnalyzer({
+  nextConfig
+});;

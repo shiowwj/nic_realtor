@@ -17,7 +17,7 @@ const Navbar: FC<NavbarProps> = ({ className, pageLinks, brandLogoImgSrc }) => {
 	return (
 		<div className={rootClassName}>
 			<div className={s.wrapper}>
-				<div className="lg:block hidden">
+				<div className="lg:block">
 					<div>
 						{pageLinks["left"].map((val, idx) => {
 							return (
@@ -27,7 +27,13 @@ const Navbar: FC<NavbarProps> = ({ className, pageLinks, brandLogoImgSrc }) => {
 							);
 						})}
 
-						<a className={s.logo}>{brandLogoImgSrc ? <Image src={brandLogoImgSrc} alt={`brand logo`} /> : <span className="font-extrabold tracking-wider text-5xl">{`NICOLE LEE`}</span>}</a>
+						<Link className={s.logo} href="/" id="sticky-logo">
+							{brandLogoImgSrc ? (
+								<Image src={brandLogoImgSrc} alt={`brand logo`} />
+							) : (
+								<span className="font-extrabold md:tracking-wider text-5xl cursor-pointer w-[15vw] md:w-full text-orange-600">{`NICOLE LEE`}</span>
+							)}
+						</Link>
 						{pageLinks["right"].map((val, idx) => {
 							return (
 								<Link key={idx} className={cn(s.links, "hidden")} href={val["link"]}>

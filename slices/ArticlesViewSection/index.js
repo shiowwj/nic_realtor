@@ -14,7 +14,7 @@ const ArticlesViewSection = ({ slice }) => {
 				{slice?.items?.map((item, i) => (
 					<div className={s.blogPostItem} key={i}>
 						<div className={s.coverimageWrapper}>
-							<img className={s.coverimage} src={item.articleviewsectionimage.url} alt={item.articleviewsectionimage.alt} />
+							<img className={s.coverimage} src={item.articleviewsectionimage.url} alt={'article description'} />
 						</div>
 						<span className={s.blogPostTitle}>
 							<PrismicRichText field={item.articleviewcardtitle} />

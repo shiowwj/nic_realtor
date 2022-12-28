@@ -24,13 +24,20 @@ const ServicesView: FC<Props> = ({ className, title, caption, services }) => {
 			</Text>
 			<div className={s.servicesContainer}>
 				{services.map((serviceItem, idx) => (
-					<div className={s.serviceItem} key={idx}>
+					<div className={cn(s.serviceItem, "")} key={idx}>
 						<div className={s.iconWrapper}>
-							<img
+							<div className="relative h-[20vh]">
+							<Image
 								className={s.icon}
 								src={serviceItem["iconType"]}
 								alt={`${serviceItem["title"]} service icon`}
+								fill
+								sizes="100vw"
+								style={{
+									objectFit: "contain",
+								}}
 							/>
+							</div>
 						</div>
 						<div className={s.serviceTitle}>{serviceItem["title"]}</div>
 						<div className={s.serviceDescription}>{serviceItem["description"]}</div>

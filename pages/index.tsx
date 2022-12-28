@@ -53,6 +53,14 @@ export default function Home({
 		<>
 			<Head>
 				<title>Nicole Lee - Properlee Property</title>
+				<meta
+					name="description"
+					content="Hi there, I'm Nicole Lee a bubbly real estate agent/content creator with a mission to add value to people's lives!"
+					key="desc"
+				/>
+				<meta property="og:title" content="Nicole Lee - Properlee Property" />
+				<meta property="og:description" content="Hi there, I'm Nicole Lee a bubbly real estate agent/content creator with a mission to add value to people's lives!" />
+				<meta property="og:image" content="/public/prof-full.png" />
 			</Head>
 			<div className="scroll-smooth transition-all bg-site-p-light text-site-p-dark overflow-x-hidden">
 				<HeroView
