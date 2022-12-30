@@ -1,4 +1,4 @@
-import Head from "next/head";
+// import Head from "next/head";
 // import Footer from "../components/footer.js";
 
 import { BlogsView, ContactForm, CtaView, Footer, HeroView, Navbar, ServicesView, SocialFeedView } from "@components/common";
@@ -51,17 +51,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<>
-			<Head>
-				<title>Nicole Lee - Properlee Property</title>
-				<meta
-					name="description"
-					content="Hi there, I'm Nicole Lee a bubbly real estate agent/content creator with a mission to add value to people's lives!"
-					key="desc"
-				/>
-				<meta property="og:title" content="Nicole Lee - Properlee Property" />
-				<meta property="og:description" content="Hi there, I'm Nicole Lee a bubbly real estate agent/content creator with a mission to add value to people's lives!" />
-				<meta property="og:image" content="/public/prof-full.png" />
-			</Head>
+
 			<div className="scroll-smooth transition-all bg-site-p-light text-site-p-dark overflow-x-hidden">
 				<HeroView
 					imgUrl={heroContent.imgUrl}
