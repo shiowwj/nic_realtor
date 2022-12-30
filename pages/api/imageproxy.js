@@ -4,3 +4,6 @@ export default async function handler (req, res) {
   const body = await result.body;
   body.pipe(res);
 };
+export const config = {
+  runtime: 'experimental-edge',
+}

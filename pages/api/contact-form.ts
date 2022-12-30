@@ -17,3 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		res.status(400).json({ message: "Something went wrong @contact-form handler", errorStack: error });
 	}
 }
+
+export const config = {
+  runtime: 'experimental-edge',
+}
