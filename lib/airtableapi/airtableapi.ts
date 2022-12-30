@@ -69,3 +69,10 @@ export const AirtableCreateNewsletter = async (formData: NewsletterValues):Promi
 		});
 	});
 };
+export const config = {
+  runtime: 'experimental-edge',
+	unstable_allowDynamic: [
+    '/node_modules/airtable/lib/airtable.umd.js',
+    '/lib/airtableapi/airtableapi.ts'
+  ],
+}

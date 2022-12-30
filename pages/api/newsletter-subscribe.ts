@@ -20,4 +20,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 export const config = {
   runtime: 'experimental-edge',
+	unstable_allowDynamic: [
+    '/node_modules/airtable/lib/airtable.umd.js',
+    '/lib/airtableapi/airtableapi.ts'
+  ],
 }
