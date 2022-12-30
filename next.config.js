@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-		runtime: "experimental-edge",
-    unstable_allowDynamic: [
-      '/node_modules/airtable/lib/airtable.umd.js',
-      '/lib/airtableapi/airtableapi.ts'
-    ],
-	},
+  // experimental: {
+	// 	runtime: "experimental-edge",
+  //   unstable_allowDynamic: [
+  //     '/node_modules/airtable/lib/airtable.umd.js',
+  //     '/lib/airtableapi/airtableapi.ts'
+  //   ],
+	// },
 	reactStrictMode: true,
 	swcMinify: true,
 	webpack: (config, { isServer }) => {
@@ -16,6 +16,7 @@ const nextConfig = {
 		return config;
 	},
 	images: {
+		domains: ['scontent-akl1-1.cdninstagram.com']
 		// domains:['scontent-xsp1-3.cdninstagram.com', 'scontent-xsp1-1.cdninstagram.com', 'scontent-xsp1-2.cdninstagram.com','scontent-xsp1-3.cdninstagram.com', ''],
 		// remotePatterns/
 	},

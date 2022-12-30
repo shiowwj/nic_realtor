@@ -35,8 +35,8 @@ const SocialFeedCard: FC<Props> = ({ className, igpost, cardIdx }) => {
 		<div className={cn(rootClassName, cardGap(cardIdx) ? "lg:mt-10" : "")} onMouseLeave={onMouseLeave} onScroll={onMouseEnter}>
 			<a href="https://www.instagram.com/accounts/login/" target={"_blank"} rel={"noreferrer"}>
 			<Image
-				src={`/api/imageproxy?url=${encodeURIComponent(igpost?.mediaUrl ? igpost?.mediaUrl : "/blog-image.jpg")}`}
-				// src={igpost?.mediaUrl ? igpost?.mediaUrl : "/blog-image.jpg"}
+				// src={`/api/imageproxy?url=${encodeURIComponent(igpost?.mediaUrl ? igpost?.mediaUrl : "/blog-image.jpg")}`}
+				src={igpost?.mediaUrl ? igpost?.mediaUrl.replace(/^[^.]*/, 'https://scontent-akl1-1') : "/blog-image.jpg"}
 				alt={"ig post"}
 				quality={100}
 				fill
