@@ -12,6 +12,7 @@ interface Props {
 }
 
 const SocialFeedCard: FC<Props> = ({ className, igpost, cardIdx }) => {
+	// console.log('igpost',igpost)
 	const rootClassName = cn(s.root, className);
 
 	const [isHovering, setIsHovered] = useState(false);
@@ -31,11 +32,8 @@ const SocialFeedCard: FC<Props> = ({ className, igpost, cardIdx }) => {
 	};
 
 	return (
-		<div
-			className={cn(rootClassName, cardGap(cardIdx) ? "lg:mt-10" : "")}
-			onMouseLeave={onMouseLeave}
-			onScroll={onMouseEnter}
-		>
+		<div className={cn(rootClassName, cardGap(cardIdx) ? "lg:mt-10" : "")} onMouseLeave={onMouseLeave} onScroll={onMouseEnter}>
+			<a href="https://www.instagram.com/accounts/login/" target={"_blank"} rel={"noreferrer"}>
 			<Image
 				src={`/api/imageproxy?url=${encodeURIComponent(igpost?.mediaUrl ? igpost?.mediaUrl : "/blog-image.jpg")}`}
 				// src={igpost?.mediaUrl ? igpost?.mediaUrl : "/blog-image.jpg"}
@@ -44,7 +42,8 @@ const SocialFeedCard: FC<Props> = ({ className, igpost, cardIdx }) => {
 				fill
 				className="rounded-3xl"
 			/>
-			<div className={cn(s.card, isHovering ? s.overlay : "")}>{isHovering ? <p className={s.caption}>{igpost?.caption}</p> : <></>}</div>
+			</a>
+			{/* <div className={cn(s.card, isHovering ? s.overlay : "")}>{true ? <p className={s.caption}>{igpost?.caption}</p> : <></>}</div> */}
 		</div>
 	);
 };

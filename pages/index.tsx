@@ -22,7 +22,7 @@ export const getStaticProps = async ({ previewData }: GetStaticPropsContext) => 
 	const pageLinks = PAGE_LINKS;
 	const servicesContent = SERVICES;
 	const blogContent = BLOG_LINKS;
-	// console.log(igPosts.length)
+	console.log(igPosts.length)
 	// console.log('ctaSection',ctaSection)
 	return {
 		props: {

@@ -1,5 +1,5 @@
 .root {
-	@apply bg-cover relative rounded-3xl flex flex-nowrap hover:cursor-pointer w-full  hover:filter hover:sepia-[80%] hover:contrast-200;
+	@apply bg-cover relative rounded-3xl flex flex-nowrap hover:cursor-pointer w-full  hover:filter hover:saturate-200;
 	aspect-ratio: 1/ 1.1 ;
 }
 

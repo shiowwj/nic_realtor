@@ -206,10 +206,81 @@ export interface ArticlesViewSectionSliceDefaultItem {
  */
 export type ArticlesViewSectionSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ArticlesViewSectionSliceDefaultPrimary>, Simplify<ArticlesViewSectionSliceDefaultItem>>;
 /**
+ * Primary content in ArticlesViewSection → Primary
+ *
+ */
+interface ArticlesViewSectionSliceWithoutImagePrimary {
+    /**
+     * Title field in *ArticlesViewSection → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: articles_view_section.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *ArticlesViewSection → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: articles_view_section.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Item in ArticlesViewSection → Items
+ *
+ */
+export interface ArticlesViewSectionSliceWithoutImageItem {
+    /**
+     * ArticleViewSectionImage field in *ArticlesViewSection → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: articles_view_section.items[].articleviewsectionimage
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    articleviewsectionimage: prismicT.ImageField<never>;
+    /**
+     * ArticleViewCardTitle field in *ArticlesViewSection → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: articles_view_section.items[].articleviewcardtitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    articleviewcardtitle: prismicT.RichTextField;
+    /**
+     * ArticleViewCardDescription field in *ArticlesViewSection → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: articles_view_section.items[].articleviewcarddescription
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    articleviewcarddescription: prismicT.RichTextField;
+}
+/**
+ * without image variation for ArticlesViewSection Slice
+ *
+ * - **API ID**: `withoutImage`
+ * - **Description**: `ArticlesViewSection`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ArticlesViewSectionSliceWithoutImage = prismicT.SharedSliceVariation<"withoutImage", Simplify<ArticlesViewSectionSliceWithoutImagePrimary>, Simplify<ArticlesViewSectionSliceWithoutImageItem>>;
+/**
  * Slice variation for *ArticlesViewSection*
  *
  */
-type ArticlesViewSectionSliceVariation = ArticlesViewSectionSliceDefault;
+type ArticlesViewSectionSliceVariation = ArticlesViewSectionSliceDefault | ArticlesViewSectionSliceWithoutImage;
 /**
  * ArticlesViewSection Shared Slice
  *
@@ -377,6 +448,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticlesSectionDocumentData, ArticlesSectionDocumentDataSlicesSlice, ArticlesSectionDocument, BlogpostsDocumentData, BlogpostsDocumentDataSlicesSlice, BlogpostsDocument, ConsultationBlockDocumentData, ConsultationBlockDocumentDataSlicesSlice, ConsultationBlockDocument, CtaLearnMoreDocumentData, CtaLearnMoreDocumentDataSlicesSlice, CtaLearnMoreDocument, AllDocumentTypes, ArticlesViewSectionSliceDefaultPrimary, ArticlesViewSectionSliceDefaultItem, ArticlesViewSectionSliceDefault, ArticlesViewSectionSliceVariation, ArticlesViewSectionSlice, BlogPostCardSliceDefaultPrimary, BlogPostCardSliceDefault, BlogPostCardSliceVariation, BlogPostCardSlice, CtaBlockSliceDefaultPrimary, CtaBlockSliceDefault, CtaBlockSliceWithCtaButtonPrimary, CtaBlockSliceWithCtaButton, CtaBlockSliceVariation, CtaBlockSlice };
+        export type { ArticlesSectionDocumentData, ArticlesSectionDocumentDataSlicesSlice, ArticlesSectionDocument, BlogpostsDocumentData, BlogpostsDocumentDataSlicesSlice, BlogpostsDocument, ConsultationBlockDocumentData, ConsultationBlockDocumentDataSlicesSlice, ConsultationBlockDocument, CtaLearnMoreDocumentData, CtaLearnMoreDocumentDataSlicesSlice, CtaLearnMoreDocument, AllDocumentTypes, ArticlesViewSectionSliceDefaultPrimary, ArticlesViewSectionSliceDefaultItem, ArticlesViewSectionSliceDefault, ArticlesViewSectionSliceWithoutImagePrimary, ArticlesViewSectionSliceWithoutImageItem, ArticlesViewSectionSliceWithoutImage, ArticlesViewSectionSliceVariation, ArticlesViewSectionSlice, BlogPostCardSliceDefaultPrimary, BlogPostCardSliceDefault, BlogPostCardSliceVariation, BlogPostCardSlice, CtaBlockSliceDefaultPrimary, CtaBlockSliceDefault, CtaBlockSliceWithCtaButtonPrimary, CtaBlockSliceWithCtaButton, CtaBlockSliceVariation, CtaBlockSlice };
     }
 }

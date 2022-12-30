@@ -7,8 +7,9 @@ export const initIGPost = async ():Promise<IinstragramPost[]> => {
 
     const data = await fetch(url);
     const feed = await data.json()
-    // console.log('feed',feed)
-    for (let i = 0; i < 9; i++) {
+    // console.log('feed',feed.data.length)
+    for (let i = 0; i < feed.data.length; i++) {
+      // console.log(feed.data[i])
       if (feed.data[i].media_type === 'VIDEO') continue
       const post: IinstragramPost = {
         id: feed.data[i].id ? feed.data[i].id : "",
