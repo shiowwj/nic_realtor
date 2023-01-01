@@ -9,6 +9,7 @@ import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "../prismicio";
 import { Head } from "@components/common";
+import Script from "next/script";
 
 const Noop: FC<{ children?: ReactNode }> = ({ children }) => <>{children}</>;
 
@@ -22,20 +23,22 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
 	return (
 		<>
-		<Head/>
-			{/* <Head>
-				<title>Nicole Lee - Properlee Property</title>
-				<meta
-					name="description"
-					content="Hi there, I'm Nicole Lee a bubbly real estate agent/content creator with a mission to add value to people's lives!"
-					key="desc"
-				/>
-				<meta property="og:title" content="Nicole Lee - Properlee Property" />
-				<meta property="og:description" content="Hi there, I'm Nicole Lee a bubbly real estate agent/content creator with a mission to add value to people's lives!" />
-				<meta property="og:image" content="/public/favicon.ico" />
+			<Head />
+			<Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-			</Head> */}
-			{/* <Head/> */}
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+						page_path: window.location.pathname,
+					});
+        `}
+      </Script>
 			<PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
 				<PrismicPreview repositoryName={repositoryName}>
 					<Layout pageProps={pageProps} currentPath={router.pathname}>
