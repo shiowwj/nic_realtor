@@ -1,19 +1,19 @@
 {
-  "title": "Nicole Lee - Properlee Property",
-  "titleTemplate": "%s - Properlee Property",
-  "description": "Nicole Lee - Properlee Property - https://nicoleleeproperleeproperty.com/",
+  "title": "Nicole Lee - Property Properlee",
+  "titleTemplate": "%s - Property Properlee",
+  "description": "Nicole Lee - Property Properlee - https://https://www.propertyproperlee.com//",
   "openGraph": {
-    "title": "Nicole Lee - Properlee Property",
-    "description": "Hi there, I'm Nicole Lee a bubbly real estate agent/content creator with a mission to add value to people's lives! - https://nicoleleeproperleeproperty.com/",
+    "title": "Nicole Lee - Property Properlee",
+    "description": "Hi there, I'm Nicole Lee a bubbly real estate agent/content creator with a mission to add value to people's lives! - https://https://www.propertyproperlee.com//",
     "type": "website",
-    "url": "https://nicoleleeproperleeproperty.com/",
-    "site_name": "Nicole Lee - Properlee Property",
+    "url": "https://https://www.propertyproperlee.com//",
+    "site_name": "Nicole Lee - Property Properlee",
     "images": [
       {
         "url": "/prof-full.png",
         "width": "800",
         "height": "600",
-        "alt": "Nicole Lee - Properlee Property"
+        "alt": "Nicole Lee - Property Properlee"
       }
     ]
   }
