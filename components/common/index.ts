@@ -10,3 +10,4 @@ export { default as ErrorMessage} from './ErrorMessage';
 export { default as Footer} from './Footer';
 export { default as Head} from './Head';
 export { default as SEO } from './SEO'
+export { default as GoogleTags } from './GoogleTags'

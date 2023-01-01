@@ -80,7 +80,7 @@ const ContactForm: FC<Props> = ({ className }) => {
 							</div>
 
 							{/* phone number + service */}
-							<div className="grid gap-3 grid-flow-row grid-cols-12 item-end">
+							<div className="grid gap-3 grid-flow-row grid-cols-12 items-end">
 
 								<div className={cn(s.fieldset, "col-span-6")}>
 									<label htmlFor="typeOfConsultation" className="hidden mb-2 text-sm font-medium text-site-s-dark">

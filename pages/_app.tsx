@@ -8,7 +8,7 @@ import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "../prismicio";
-import { Head } from "@components/common";
+import { GoogleTags, Head } from "@components/common";
 import Script from "next/script";
 
 const Noop: FC<{ children?: ReactNode }> = ({ children }) => <>{children}</>;
@@ -23,23 +23,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
 	return (
 		<>
-
-			<Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-						page_path: window.location.pathname,
-					});
-					gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ADS}');
-        `}
-      </Script>
+			<GoogleTags/>
 			<Head />
 			<PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
 				<PrismicPreview repositoryName={repositoryName}>

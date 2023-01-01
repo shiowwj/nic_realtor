@@ -26,7 +26,7 @@ const ServicesView: FC<Props> = ({ className, title, caption, services }) => {
 				{services.map((serviceItem, idx) => (
 					<div className={cn(s.serviceItem, "")} key={idx}>
 						<div className={s.iconWrapper}>
-							<div className="relative h-[20vh]">
+							<div className="relative h-[40vh] md:h-[20vh]">
 							<Image
 								className={s.icon}
 								src={serviceItem["iconType"]}

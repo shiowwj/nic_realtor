@@ -17,7 +17,7 @@
 /* hover:bg-site-p-pink */
 
 .iconWrapper {
-	@apply w-6/12  px-4 mx-auto;
+	@apply w-full  px-4 mx-auto;
 }
 
 .icon {

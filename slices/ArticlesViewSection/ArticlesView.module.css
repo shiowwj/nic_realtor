@@ -16,7 +16,7 @@
 /* flex-wrap-reverse */
 
 .blogPostItem {
-	@apply lg:w-[30%] rounded-3xl shadow-lg flex flex-col bg-site-p-light;
+	@apply w-full lg:w-[30%] rounded-3xl shadow-lg flex flex-col bg-site-p-light;
 }
 /* flex-grow  */
 /* hover:bg-site-p-pink */
