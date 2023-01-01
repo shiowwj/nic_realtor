@@ -37,9 +37,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
 						page_path: window.location.pathname,
 					});
-					gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ADS}', {
-						page_path: window.location.pathname,
-					});
+					gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ADS}');
         `}
       </Script>
 			<Head />
