@@ -39,6 +39,21 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 					});
         `}
       </Script>
+			<Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ADS}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ADS}', {
+						page_path: window.location.pathname,
+					});
+        `}
+      </Script>
 			<PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
 				<PrismicPreview repositoryName={repositoryName}>
 					<Layout pageProps={pageProps} currentPath={router.pathname}>

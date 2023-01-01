@@ -1,6 +1,4 @@
 import { SEO } from "@components/common";
-import Script from "next/script";
-
 const Head = () => {
 	return (
 		<SEO>
