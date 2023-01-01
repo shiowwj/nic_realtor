@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import cn from "clsx";
-
+import * as gtag from '@lib/ga/googletag'
 import s from "./ContactForm.module.css";
 import { useForm } from "react-hook-form";
 import { Button } from "@components/ui";
@@ -8,6 +8,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import ErrorMsg from "../ErrorMessage/ErrorMessage";
 import { ContactFormValues, TypeOfServices } from "@customTypes/contactform";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 interface Props {
 	className?: string;
@@ -22,10 +23,17 @@ const ContactForm: FC<Props> = ({ className }) => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<ContactFormValues>({});
+	 const router = useRouter();
 	const [handleFormSubmit, sethandleFormSubmit] = useState(false);
 	const [handleDisableFormSubmit, setHandleDisableFormSubmit] = useState(false);
 	const onSubmit = async (formData: Record<string, any>) => {
 		sethandleFormSubmit(true);
+		gtag.event({
+      action: "Submit Contact Me Form", 
+			category: "button click",
+			label: "button",
+			value: "Submit Contact Me Form button click"
+    })
 		try {
 			const response = await axios.post("/api/contact-form", formData);
 			if (response.status !== 200) {
@@ -34,19 +42,21 @@ const ContactForm: FC<Props> = ({ className }) => {
 				return;
 			}
 			setHandleDisableFormSubmit(true);
+			gtag.conversionBookAppointment(router.pathname)
 		} catch (error) {
 			console.error("failed to submitform", error);
 			// setSubmitError(true)
 			return;
 		}
 	};
+
 	const onErrors = (errors: any) => {
 		// console.error('form errors', errors)
 	};
 	// console.log(errors);
 	return (
 		<section className={rootClassName} id={`contact-form`}>
-			<div className={s.title}>{`Let's work together`}</div>
+			<div className={s.title}>{`Contact Me`}</div>
 			<div className="flex-1 pb-2">
 				<form onSubmit={handleSubmit(onSubmit, onErrors)}>
 					<div className={s.sectionRoot}>
@@ -154,7 +164,7 @@ const ContactForm: FC<Props> = ({ className }) => {
 						<div className="px-4 sm:px-6 flex">
 							{!handleDisableFormSubmit ? (
 								<Button type="submit" variant="form" className={s.contactButton} loading={handleFormSubmit} disabled={handleDisableFormSubmit}>
-									{`Submit Appointment`}
+									{`Submit`}
 								</Button>
 							) : (
 								<Button type="submit" variant="form" className={s.contactButtonDisabled} loading={false} disabled={handleDisableFormSubmit}>

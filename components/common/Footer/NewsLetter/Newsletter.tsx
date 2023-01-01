@@ -8,7 +8,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import ErrorMsg from "../../ErrorMessage/ErrorMessage";
 import { NewsletterValues } from "@customTypes/newsletter";
 import { Button } from "@components/ui";
-
+import * as gtag from '@lib/ga/googletag'
 interface Props {
 	className?: string;
 	// slice?: any;
@@ -26,6 +26,12 @@ const Newsletter: FC<Props> = ({ className }) => {
 	const [handleDisableFormSubmit, setHandleDisableFormSubmit] = useState(false);
 	const onSubmit = async (formData: Record<string, any>) => {
 		sethandleFormSubmit(true);
+		gtag.event({
+      action: "Subscribe Newsletter", 
+			category: "button click",
+			label: "button",
+			value: "Subscribe Newsletter button click"
+    })
 		try {
 			const response = await axios.post("/api/newsletter-subscribe", formData);
 			if (response.status !== 200) {

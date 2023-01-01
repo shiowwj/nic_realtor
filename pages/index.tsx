@@ -70,7 +70,7 @@ export default function Home({
 				<SocialFeedView igPosts={igPosts} />
 				<BlogsView slice={consultationSection.data.slices} variant={"consult"} />
 				{/* <Instagram posts={examplePosts} /> */}
-				<CtaView slice={ctaSection.data.slices} />
+				{/* <CtaView slice={ctaSection.data.slices} /> */}
 				<ContactForm />
 				{/* <Contact /> */}
 				<Footer />

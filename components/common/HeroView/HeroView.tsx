@@ -5,7 +5,7 @@ import { Button, Text } from "@components/ui";
 import Image from "next/image";
 import coverImg from "../../../public/cover.png";
 import cn from "clsx";
-
+import * as gtag from '@lib/ga/googletag'
 import s from "./HeroView.module.css";
 
 interface Props {
@@ -20,6 +20,15 @@ interface Props {
 
 const HeroView: FC<Props> = ({ children, className, imgUrl, title, link, subheading, ctaButtonText }) => {
 	const rootClassName = cn(s.root, className);
+
+	const handleCTA = () => {
+		gtag.event({
+      action: "Find out more", 
+			category: "button click",
+			label: "button",
+			value: "Find out more button click"
+    })
+	}
 	return (
 		<section className={rootClassName}>
 			{children}
@@ -43,7 +52,7 @@ const HeroView: FC<Props> = ({ children, className, imgUrl, title, link, subhead
 						<span className={s.highlightSpan}>{subheading}</span>
 					</Text>
 					<Link href={link ? link : ""} scroll={false}>
-						<Button type="button" className={s.ctabutton}>
+						<Button type="button" className={s.ctabutton} onClick={handleCTA}>
 							{ctaButtonText ? ctaButtonText : "Learn More"}
 						</Button>
 					</Link>
