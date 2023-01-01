@@ -1,5 +1,5 @@
 .root {
-
+	@apply min-h-[750px]
 }
 
 .header {
@@ -8,7 +8,7 @@
 }
 
 .wrapper {
-	@apply h-fit m-auto px-4;
+	@apply h-fit m-auto px-4 z-40;
 }
 
 .title {
