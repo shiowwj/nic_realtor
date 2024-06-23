@@ -1,34 +1,104 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SanityPress
+
+An opinionated and minimally styled starter template with Tailwind CSS and pre-built schema and modules for rapid website development.
+
+> [🔭 _Umbra_ ](https://sanitypress.vercel.app/themes) and [🍃 _Foliage_ ](https://sanitypress.vercel.app/themes) themes now available!
+
+![](https://cdn.sanity.io/images/81pocpw8/production/02b92fc2bab8636ee7c8026292d0e8b685041538-5088x3554.jpg)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnuotsu%2Fsanitypress&env=NEXT_PUBLIC_SANITY_PROJECT_ID,NEXT_PUBLIC_SANITY_TOKEN)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/nuotsu/sanitypress)
+
+🖋️ Published on [Sanity.io](https://www.sanity.io/templates/next-sanity-template)
+
+⚡ [Perfect Lighthouse scores](https://pagespeed.web.dev/analysis/https-sanitypress-vercel-app/fyc5qki4bd?form_factor=desktop) on desktop and 99/100 on mobile.
+
+🚀 Checkout the [demo site](https://sanitypress.vercel.app), [documentation](https://sanitypress.vercel.app/docs) and [blog](https://sanitypress.vercel.app/blog).
+
+## Table of Contents
+
+- [Key Features](#key-features)
+- [Getting Started](#getting-started)
+- [Staging](#staging)
+- [Helpful Resources (The SanityPress Blog)](https://sanitypress.vercel.app/blog)
+- [External References](#external-references)
+
+## Key Features
+
+- [x] ✨ Modern Frontend Development with Next.js (App Router, RSC, Typescript) and Tailwind CSS.
+- [x] 📕 [Pre-configured Sanity schema](/sanity/schemas/index.ts) for rapid content structuring.
+- [x] 📘 [Pre-built frontend components](/next/src/ui/) for rapid website development.
+- [x] ✏️ [Visual editing](https://sanitypress.vercel.app/blog/visual-editing) right inside the Sanity Studio.
+- [x] ⌨️ Auto-generated [sitemap.xml](/next/src/app/sitemap.ts) and [blog rss.xml](/next/src/app/blog/rss.xml/route.ts).
 
 ## Getting Started
 
-First, run the development server:
+Directions are also found on the [docs](https://sanitypress.vercel.app/docs).
 
-```bash
-npm run dev
-# or
-yarn dev
+### 1. New repo
+
+Clone, fork or use the template from [the GitHub template](https://github.com/nuots/sanitypress).
+
+### 2. Get a new Sanity project ID
+
+From the [Sanity.io Manage](https://sanity.io/manage) dashboard, create a new project _from scratch (blank schema) with CLI_.
+
+### 3. Update environment variables
+
+```sh
+# /next/.env.local
+NEXT_PUBLIC_SANITY_PROJECT_ID = ...
+NEXT_PUBLIC_SANITY_TOKEN = ... # retrieve from https://sanity.io/manage
+NEXT_PUBLIC_REVALIDATE = ... # number in seconds; leave empty for `revalidate: false`
+
+# /sanity/.env.local
+SANITY_STUDIO_PROJECT_ID = ...
+SANITY_STUDIO_PREVIEW_URL = ... # your live or staging site URL
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 4. Populate the Studio with content
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Open your new Sanity Studio and add (and publish):
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+1. a **Site** document with a `title` field.
+2. a **Page** document with the slug `index` to use as the Home page.
+3. [Optional] a **Page** document with the slug `404` to use as the _Page not found_ page.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### 5. Set up deployments
 
-## Learn More
+Update the **Root Directory** (Vercel) / **Project Directory** (Netlify) with a value of `next`. This tells the deployment service to serve the next/ directory and not the root.
 
-To learn more about Next.js, take a look at the following resources:
+Optionally, install either of the following plugins to add a widget to your Studio Dashboard:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+# Vercel — https://www.sanity.io/plugins/vercel-dashboard-widget
+npm i sanity-plugin-dashboard-widget-vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Netlify — https://www.sanity.io/plugins/sanity-plugin-dashboard-widget-netlify
+npm i sanity-plugin-dashboard-widget-netlify
+```
 
-## Deploy on Vercel
+### 6. Customize the frontend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Feel free to adjust styles, add more schema and modules, and more.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Staging
+
+Create a new git branch (call it anything—e.g. `staging` or `preview`) and set an environment variable specific to that branch in your deployment service (Vercel or Netlify):
+
+```sh
+# Environment variable for the staging branch (in Vercel, Netlify, etc.)
+ENABLE_PREVIEW = true
+```
+
+Now you can use the preview deployment URL to share staged content (unpublished changes) with your team or clients.
+
+## External References
+
+- [The official Sanity toolkit for Next.js](https://www.sanity.io/plugins/next-sanity)
+- [`sanity-io/next-sanity` README](https://github.com/sanity-io/next-sanity#readme)
+- [Visual Editing with Next.js App Router and Sanity Studio](https://www.sanity.io/guides/nextjs-app-router-live-preview)
+
+---
+
+# Want to support future updates? [Buy me a coffee ☕!](https://buymeacoffee.com/nuotsu)
