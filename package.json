@@ -1,0 +1,8 @@
+{
+	"name": "property-properlee-website",
+	"version": "3.5.1",
+	"description": "A Next.js + Sanity.io Starter Template",
+	"main": "index.js",
+	"author": "jamesshiow <hello@hosehdigital.com> (https://hosehdigital.com)",
+	"license": "ISC"
+}

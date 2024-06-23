@@ -9,7 +9,7 @@ const ContactForm = ({
 	title,
 	content,
 	successMessage,
-}: Sanity.ContactForm) => {
+}: Partial<Sanity.ContactForm>) => {
 	const [state, handleSubmit] = useForm('xanwwjed')
 	const { executeRecaptcha } = useGoogleReCaptcha()
 
