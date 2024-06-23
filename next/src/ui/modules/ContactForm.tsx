@@ -83,13 +83,6 @@ const ContactForm = ({
 								errors={state.errors}
 							/>
 						</div>
-						<div
-							className="g-recaptcha"
-							data-sitekey={RECAPTCHA_SITE_KEY}
-							data-callback="onSubmit"
-							data-action="submit"
-						></div>
-						<br />
 						<button
 							type="submit"
 							disabled={state.submitting}
