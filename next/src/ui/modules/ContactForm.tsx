@@ -86,7 +86,7 @@ const ContactForm = ({
 						<button
 							type="submit"
 							disabled={state.submitting}
-							className="action _btn"
+							className="action _btn mt-4"
 						>
 							Send
 						</button>
