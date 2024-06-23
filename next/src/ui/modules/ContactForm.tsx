@@ -10,20 +10,12 @@ const ContactForm = ({
 	content,
 	successMessage,
 }: Partial<Sanity.ContactForm>) => {
-	const [state, handleSubmit] = useForm('xanwwjed')
 	const { executeRecaptcha } = useGoogleReCaptcha()
-
-	const onHandleSubmit = (e: any) => {
-		e.preventDefault()
-		if (!executeRecaptcha) {
-			console.log('Execute recaptcha not available yet')
-			return
-		}
-		executeRecaptcha('contact_form').then((token) => {
-			handleSubmit(e)
-		})
-		return
-	}
+	const [state, handleSubmit] = useForm('xanwwjed', {
+		data: {
+			'g-recaptcha-response': executeRecaptcha,
+		},
+	})
 
 	return (
 		<section className="section">
@@ -42,10 +34,8 @@ const ContactForm = ({
 						</div>
 					</div>
 				) : (
-					<form onSubmit={onHandleSubmit}>
+					<form onSubmit={handleSubmit}>
 						<div className="flex flex-col gap-y-4">
-							{/* <div> */}
-							{/* <label htmlFor="email">Email Address</label> */}
 							<input
 								id="name"
 								type="text"
