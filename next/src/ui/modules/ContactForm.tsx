@@ -2,7 +2,6 @@
 import { PortableText } from 'next-sanity'
 import React from 'react'
 import { useForm, ValidationError } from '@formspree/react'
-import { RECAPTCHA_SITE_KEY } from '@/lib/env'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 const ContactForm = ({
@@ -17,6 +16,9 @@ const ContactForm = ({
 		},
 	})
 
+	const onHandleSubmit = (e: any) => {
+		handleSubmit(e)
+	}
 	return (
 		<section className="section">
 			<div className="section grid max-w-screen-lg items-center gap-12 gap-y-6 rounded bg-accent/5 md:grid-cols-[1fr,1fr]">
@@ -34,7 +36,7 @@ const ContactForm = ({
 						</div>
 					</div>
 				) : (
-					<form onSubmit={handleSubmit}>
+					<form onSubmit={onHandleSubmit}>
 						<div className="flex flex-col gap-y-4">
 							<input
 								id="name"
@@ -42,6 +44,7 @@ const ContactForm = ({
 								name="name"
 								placeholder="Name"
 								className="form-input"
+								required
 							/>
 							<ValidationError
 								prefix="Name"
@@ -54,6 +57,7 @@ const ContactForm = ({
 								name="email"
 								placeholder="Email"
 								className="form-input"
+								required
 							/>
 							<ValidationError
 								prefix="Email"
@@ -66,6 +70,7 @@ const ContactForm = ({
 								name="phonenumber"
 								placeholder="Phone Number"
 								className="form-input"
+								required
 							/>
 							<ValidationError
 								prefix="Phone Number"

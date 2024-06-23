@@ -10,7 +10,7 @@ import { Analytics } from '@vercel/analytics/react'
 import '@/styles/app.css'
 import { Josefin_Sans } from 'next/font/google'
 import { cn } from '@/lib/utils'
-import { RECAPTCHA_SITE_KEY } from '@/lib/env'
+
 const font = Josefin_Sans({ subsets: ['latin'], weight: '400' })
 
 export const metadata: Metadata = {
@@ -27,9 +27,6 @@ export default async function RootLayout({
 	return (
 		<html lang="en">
 			{/* <GoogleTagManager gtmId='' /> */}
-			<script
-				src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
-			></script>
 			<body className={cn(font.className, 'bg-canvas text-ink')}>
 				<SkipToContent />
 				<Announcement />
