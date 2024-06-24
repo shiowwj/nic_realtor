@@ -13,10 +13,15 @@ export default function GoogleCaptchaWrapper({
 		<GoogleReCaptchaProvider
 			reCaptchaKey={recaptchaKey ?? 'NOT DEFINED'}
 			scriptProps={{
-				async: false,
-				defer: false,
-				appendTo: 'head',
-				nonce: undefined,
+				async: true,
+				defer: true,
+				appendTo: 'body',
+			}}
+			container={{
+				// element: 'recaptcha-container',
+				parameters: {
+					badge: 'bottomleft',
+				},
 			}}
 		>
 			{children}

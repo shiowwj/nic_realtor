@@ -101,15 +101,15 @@
 	}
 
 	.action {
-		@apply _btn frosted-glass hover:from-altAccent/90 hover:to-altAccent text-balance rounded-md border border-transparent bg-gradient-to-br from-accent/90 to-accent text-white shadow;
+		@apply _btn frosted-glass text-balance rounded-md border border-transparent bg-gradient-to-br from-accent/90 to-accent text-white shadow hover:from-altAccent/90 hover:to-altAccent;
 	}
 
 	.action-outline {
-		@apply _btn frosted-glass hover:from-altAccent/90 hover:to-altAccent hover:border-altAccent/15 text-balance rounded-md border border-accent/10 bg-gradient-to-br from-canvas/70 to-canvas text-accent;
+		@apply _btn frosted-glass text-balance rounded-md border border-accent/10 bg-gradient-to-br from-canvas/70 to-canvas text-accent hover:border-altAccent/15 hover:from-altAccent/90 hover:to-altAccent;
 	}
 
 	.ghost {
-		@apply _btn frosted-glass hover:bg-altAccent/80 rounded-md;
+		@apply _btn frosted-glass rounded-md hover:bg-altAccent/80;
 	}
 
 	.link {
@@ -227,8 +227,7 @@
 	}
 
 	.form-input {
-		@apply block w-full p-2 rounded-md border border-accent/10 bg-canvas/70 text-ink focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/20;
-	
+		@apply block w-full rounded-md border border-accent/10 bg-canvas/70 p-2 text-ink focus:border-accent/20 focus:outline-none focus:ring-2 focus:ring-accent/50;
 	}
 }
 
@@ -311,4 +310,8 @@
 	.anim-fade-to-b {
 		--y: -1rem;
 	}
+}
+.grecaptcha-badge {
+	right: 0px !important;
+	left: -186px !important;
 }

@@ -2,15 +2,10 @@ import { fetchSanity, groq } from '@/lib/sanity/fetch'
 import { modulesQuery } from '@/lib/sanity/queries'
 import Modules from '@/ui/modules'
 import processMetadata from '@/lib/processMetadata'
-import GoogleCaptchaWrapper from '@/ui/google-recaptcha/google-recaptcha-wrapper'
 
 export default async function Page() {
 	const page = await getPage()
-	return (
-		<GoogleCaptchaWrapper>
-			<Modules modules={page?.modules} />
-		</GoogleCaptchaWrapper>
-	)
+	return <Modules modules={page?.modules} />
 }
 
 export async function generateMetadata() {
