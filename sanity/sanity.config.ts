@@ -19,7 +19,7 @@ const singletonTypes = ['site']
 
 export default defineConfig({
 	name: 'default',
-	title: 'SanityPress',
+	title: 'Property ProperLee Studio',
 
 	projectId,
 	dataset: 'production',

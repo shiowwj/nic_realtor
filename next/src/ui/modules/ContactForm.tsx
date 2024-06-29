@@ -27,7 +27,7 @@ const ContactForm = ({
 					<div className="flex flex-col gap-y-8">
 						<h2 className="text-ink">{title}</h2>
 						<div className="richtext">
-							<PortableText value={content} />
+							{content && <PortableText value={content} />}
 						</div>
 					</div>
 

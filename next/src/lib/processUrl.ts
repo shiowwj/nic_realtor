@@ -1,6 +1,6 @@
 import { stegaClean } from '@sanity/client/stega'
 
-export const BASE_URL = 'https://sanitypress.vercel.app'
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL as string
 
 export default function (
 	page: Sanity.PageBase,
@@ -12,7 +12,15 @@ export default function (
 		params?: string
 	} = {},
 ) {
-	const directory = page._type === 'blog.post' ? 'blog' : null
+	let directory: string | null = null
+
+	if (page._type === 'blog.post') {
+		directory = 'blog'
+	}
+
+	if (page._type === 'listing.post') {
+		directory = 'listings'
+	}
 
 	const slug = page.metadata?.slug?.current
 	const path = slug === 'index' ? null : slug

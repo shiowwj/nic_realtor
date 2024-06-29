@@ -2,10 +2,16 @@ import { fetchSanity, groq } from '@/lib/sanity/fetch'
 import { modulesQuery } from '@/lib/sanity/queries'
 import Modules from '@/ui/modules'
 import processMetadata from '@/lib/processMetadata'
+import ContactForm from '@/ui/modules/ContactForm'
 
 export default async function Page() {
 	const page = await getPage()
-	return <Modules modules={page?.modules} />
+	return (
+		<>
+			<Modules modules={page?.modules} />
+			{page.contactForm && <ContactForm {...page.contactForm} />}
+		</>
+	)
 }
 
 export async function generateMetadata() {
@@ -21,7 +27,8 @@ async function getPage() {
 			metadata {
 				...,
 				'ogimage': image.asset->url
-			}
+			},
+			'contactForm':contactForm->contactForm
 		}`,
 		{
 			tags: ['homepage'],

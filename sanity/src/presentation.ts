@@ -12,8 +12,16 @@ export const locations: DocumentLocationResolver = (params, context) => {
 		return doc$.pipe(
 			map((doc) => {
 				if (!doc?.metadata?.slug?.current) return null
+				let directory = ''
 
-				const directory = params.type === 'blog.post' ? '/blog' : ''
+				if (params.type === 'blog.post') {
+					directory = '/blog'
+				}
+
+				if (params.type === 'listing.post') {
+					directory = '/listing'
+				}
+
 				const slug = doc.metadata.slug.current
 				const path = slug === 'index' ? '' : `/${slug}`
 

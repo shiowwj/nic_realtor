@@ -9,6 +9,7 @@ import redirect from './documents/redirect'
 import logo from './documents/logo'
 import pricing from './documents/pricing'
 import testimonial from './documents/testimonial'
+import contactForms from './documents/contact.forms'
 
 // objects
 import cta from './objects/cta'
@@ -36,6 +37,8 @@ import stepList from './modules/step-list'
 import testimonialFeatured from './modules/testimonial.featured'
 import testimonialList from './modules/testimonial-list'
 import contactForm from './modules/contact-form'
+import listingPost from './documents/listing.post'
+import propertyList from './modules/property-list'
 
 export const schemaTypes = [
 	// documents
@@ -49,6 +52,8 @@ export const schemaTypes = [
 	logo,
 	pricing,
 	testimonial,
+	listingPost,
+	contactForms,
 
 	// objects
 	cta,
@@ -60,6 +65,7 @@ export const schemaTypes = [
 	// modules
 	accordionList,
 	blogList,
+	propertyList,
 	breadcrumbs,
 	callout,
 	creativeModule,

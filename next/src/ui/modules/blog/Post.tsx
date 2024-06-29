@@ -15,7 +15,6 @@ export default async function Post({ post }: { post: Sanity.BlogPost }) {
 			metadata
 		}`,
 	)
-
 	return (
 		<>
 			<article>

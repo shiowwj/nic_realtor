@@ -1,0 +1,49 @@
+.body {
+	@screen md {
+		grid-template-columns: [bleed-start] 1fr [content-start] min(100%, 65ch) [content-end] 1fr [bleed-end];
+
+		& > * {
+			grid-column: content;
+		}
+	}
+}
+
+/* YourCssModule.module.css */
+.blurEffect {
+	/* Apply your blur effect here. For example, using a pseudo-element: */
+	position: relative;
+}
+
+.blurEffect::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 20px; /* Adjust the height as needed */
+	background: linear-gradient(
+		to bottom,
+		transparent,
+		white
+	); /* Adjust the colors based on your background */
+}
+
+.fadeOutOverlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 20px; /* Adjust the height as needed */
+	background: linear-gradient(
+		to bottom,
+		transparent,
+		white
+	); /* Adjust the colors based on your background */
+}
+
+.featureItem {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	row-gap: 1rem;
+}

@@ -34,6 +34,7 @@ declare global {
 		type PageBase = SanityDocument<{
 			title?: string
 			metadata: Metadata
+			contactForm: any
 		}>
 
 		type Page = PageBase & {
@@ -91,6 +92,37 @@ declare global {
 			content: any
 			successMessage: any
 		}>
+
+		type ListingPost = PageBase & {
+			readonly _type: 'listing.post'
+			name: string
+			listingPrice: number
+			address: string
+
+			propertyDetails: {
+				noOfBedrooms: string
+				noOfBathooms: string
+				noOfHelperRooms?: string
+				noOfStudyRooms?: string
+
+				listedDate?: Date
+				yearOfTOP?: string
+				tenure?: string
+				district?: string
+
+				propertyType?: string
+				totalSqFt?: number
+				landSize?: number
+				builtUpSize?: number
+			}
+			nearestMRT?: string[]
+			propertyWriteUpAndFeatures: {
+				additionalFeatures?: string[]
+				content?: any
+			}
+			featureVideo?: string
+			publishDate: string
+		}
 
 		// objects
 

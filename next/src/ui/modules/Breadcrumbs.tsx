@@ -6,10 +6,10 @@ export default async function Breadcrumbs({
 	currentPage,
 }: Partial<{
 	crumbs: Sanity.Link[]
-	currentPage: Sanity.Page | Sanity.BlogPost
+	currentPage: Sanity.Page | Sanity.BlogPost | Sanity.ListingPost
 }>) {
 	return (
-		<nav className="section py-4 text-sm">
+		<nav className="section py-2 text-sm">
 			<ol
 				className="flex flex-wrap items-center gap-x-2 gap-y-1"
 				itemScope

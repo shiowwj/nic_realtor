@@ -17,6 +17,8 @@ const structure: StructureResolver = (S, context) =>
 			S.documentTypeListItem('redirect').title('Redirects'),
 			S.divider(),
 
+			S.documentTypeListItem('listing.post').title('Listing posts'),
+			S.divider(),
 			S.documentTypeListItem('blog.post').title('Blog posts'),
 			S.documentTypeListItem('blog.category').title('Blog categories'),
 			S.divider(),
@@ -25,6 +27,7 @@ const structure: StructureResolver = (S, context) =>
 				S.documentTypeListItem('logo').title('Logos'),
 				S.documentTypeListItem('pricing').title('Pricing tiers'),
 				S.documentTypeListItem('testimonial').title('Testimonials'),
+				S.documentTypeListItem('contact.form').title('Contact Forms'),
 			]).icon(BsDatabaseAdd),
 		])
 
