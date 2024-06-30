@@ -29,11 +29,11 @@ export default function PropertyPreview({
 				</div>
 			)}
 
-			{!post.featureVideo && (
+			{!post.featureVideo && post.photos && (
 				<figure className="aspect-video overflow-hidden rounded-lg rounded-b-none bg-ink/5">
 					<Img
 						className="aspect-video w-full object-cover transition-[filter,transform] group-hover:scale-105 group-hover:brightness-110"
-						image={post.metadata.image}
+						image={post.photos[0]}
 						imageWidth={800}
 					/>
 				</figure>
