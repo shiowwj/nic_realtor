@@ -122,6 +122,7 @@ declare global {
 			}
 			featureVideo?: string
 			publishDate: string
+			photos: Image[]
 		}
 
 		// objects

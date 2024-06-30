@@ -1,5 +1,5 @@
 import { defineConfig } from 'sanity'
-import { BASE_URL, projectId } from './src/env'
+import { BASE_URL, dataset, projectId } from './src/env'
 import { structureTool } from 'sanity/structure'
 import structure from './src/structure'
 import { locations } from './src/presentation'
@@ -22,7 +22,7 @@ export default defineConfig({
 	title: 'Property ProperLee Studio',
 
 	projectId,
-	dataset: 'production',
+	dataset: dataset,
 
 	plugins: [
 		structureTool({

@@ -1,9 +1,11 @@
 import { createClient } from 'next-sanity'
 import dev from '@/lib/env'
 
+const SANITY_DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET as string
+
 export default createClient({
 	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-	dataset: 'production',
+	dataset: SANITY_DATASET,
 	apiVersion: '2024-05-01',
 	useCdn: !dev,
 	stega: {

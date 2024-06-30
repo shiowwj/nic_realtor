@@ -28,8 +28,8 @@ export default defineType({
 			title: 'Property Write Up',
 		},
 		{
-			name: 'imagesAndVideos',
-			title: 'Images and Videos',
+			name: 'photosAndVideos',
+			title: 'Photos and Videos',
 		},
 		{
 			name: 'seo',
@@ -201,8 +201,17 @@ export default defineType({
 		defineField({
 			name: 'featureVideo',
 			type: 'url',
-			group: 'imagesAndVideos',
-			description: 'URL to marketing video (youtube)',
+			group: 'photosAndVideos',
+			description:
+				'URL to marketing video (youtube), leave empty if not available',
+		}),
+		defineField({
+			name: 'photos',
+			type: 'array',
+			of: [{ type: 'image' }],
+			group: 'photosAndVideos',
+			description:
+				'Upload marketing images, first photo will be the cover image',
 		}),
 		defineField({
 			name: 'metadata',

@@ -35,7 +35,7 @@ export default async function Post({
 			</div>
 			{/* // image carousel + property at a glance details */}
 			<section>
-				<ImagePreviewCarousel />
+				<ImagePreviewCarousel {...listing} />
 				<KeyStatsDetails {...listing} />
 				<PropertyDetails {...listing} />
 				<AboutDetails {...listing} />
