@@ -6,6 +6,7 @@
 	"license": "UNLICENSED",
 	"scripts": {
 		"dev": "sanity dev",
+		"dev-w-prod-data": "sh ./scripts/build_download_import_deploy.sh && bun dev",
 		"start": "sanity start",
 		"build": "sanity build",
 		"deploy": "sanity deploy",

@@ -6,3 +6,13 @@ export const dataset = process.env.SANITY_STUDIO_DATASET!
 export const BASE_URL = isDev
 	? 'http://localhost:3000'
 	: process.env.SANITY_STUDIO_PREVIEW_URL
+
+console.log(
+	'ENV: ',
+	'projectId - ',
+	projectId,
+	'| dataset - ',
+	dataset,
+	'| baseurl - ',
+	BASE_URL,
+)

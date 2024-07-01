@@ -22,7 +22,7 @@ const ContactForm = ({
 	}
 	return (
 		<GoogleCaptchaWrapper>
-			<section className="section">
+			<section className="section" id="contact">
 				<div className="section grid max-w-screen-lg items-center gap-12 gap-y-6 rounded bg-accent/5 md:grid-cols-[1fr,1fr]">
 					<div className="flex flex-col gap-y-8">
 						<h2 className="text-ink">{title}</h2>

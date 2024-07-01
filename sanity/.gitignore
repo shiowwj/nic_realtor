@@ -29,3 +29,7 @@
 *.local
 
 .env
+.env*
+
+/scripts
+/migration_data
