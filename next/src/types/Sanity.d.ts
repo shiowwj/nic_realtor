@@ -108,7 +108,7 @@ declare global {
 				listedDate?: Date
 				yearOfTOP?: string
 				tenure?: string
-				district?: string
+				district?: number
 
 				propertyType?: string
 				totalSqFt?: number

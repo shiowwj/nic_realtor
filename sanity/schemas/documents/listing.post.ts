@@ -98,7 +98,7 @@ export default defineType({
 				}),
 				defineField({
 					name: 'district',
-					type: 'string',
+					type: 'number',
 					group: 'Key Stats',
 					options: {
 						list: POSTAL_DISTRICTS,
@@ -217,6 +217,12 @@ export default defineType({
 			name: 'metadata',
 			type: 'metadata',
 			group: 'seo',
+		}),
+		defineField({
+			name: 'propGuruListingUrl',
+			type: 'url',
+			group: 'propertyWriteUp',
+			description: 'URL to Property Guru listing, leave empty if not available',
 		}),
 		// TODO: ADD A MODULES FIELD FOR ADDING THINGS LIKE
 		// FACLITIES, FLOOR PLANS, ETC

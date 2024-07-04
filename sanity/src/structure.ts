@@ -28,6 +28,7 @@ const structure: StructureResolver = (S, context) =>
 				S.documentTypeListItem('pricing').title('Pricing tiers'),
 				S.documentTypeListItem('testimonial').title('Testimonials'),
 				S.documentTypeListItem('contact.form').title('Contact Forms'),
+				S.documentTypeListItem('service').title('Services'),
 			]).icon(BsDatabaseAdd),
 		])
 

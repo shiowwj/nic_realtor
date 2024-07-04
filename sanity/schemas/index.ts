@@ -39,6 +39,7 @@ import testimonialList from './modules/testimonial-list'
 import contactForm from './modules/contact-form'
 import listingPost from './documents/listing.post'
 import propertyList from './modules/property-list'
+import service from './objects/service'
 
 export const schemaTypes = [
 	// documents
@@ -61,6 +62,7 @@ export const schemaTypes = [
 	link,
 	linkList,
 	metadata,
+	service,
 
 	// modules
 	accordionList,

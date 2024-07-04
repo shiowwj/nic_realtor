@@ -1,4 +1,4 @@
-import { PROPERTY_TYPE } from '@/constants/property'
+import { POSTAL_DISTRICTS, PROPERTY_TYPE } from '@/constants/property'
 import { numberWithCommas, removeUnderscores } from '@/lib/utils'
 import React from 'react'
 
@@ -27,6 +27,12 @@ const DetailItemComponent: React.FC<Props> = ({ title, value }) => {
 }
 
 const PropertyDetails = (listing: Sanity.ListingPost) => {
+	const district = POSTAL_DISTRICTS.filter((v) => {
+		if (v.value === (listing.propertyDetails.district as number)) {
+			return v
+		}
+	})
+
 	return (
 		<div className="bg-inherit p-4 md:p-2">
 			<div className="mx-auto w-full max-w-screen-xl p-4 max-md:px-4 md:py-8">
@@ -40,7 +46,16 @@ const PropertyDetails = (listing: Sanity.ListingPost) => {
 						{listing.propertyDetails.district && (
 							<DetailItemComponent
 								title="District"
-								value={removeUnderscores(listing.propertyDetails.district!)}
+								value={district[0].title}
+								// value={removeUnderscores(
+								// 	POSTAL_DISTRICTS.filter((v) => {
+								// 		if (
+								// 			v.value === (listing.propertyDetails.district as string)
+								// 		) {
+								// 			return 'D14'
+								// 		}
+								// 	}),
+								// )}
 							/>
 						)}
 						{listing.nearestMRT && (
