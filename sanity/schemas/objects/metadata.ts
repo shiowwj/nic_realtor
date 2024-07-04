@@ -14,7 +14,7 @@ export default defineType({
 			name: 'description',
 			type: 'text',
 			rows: 3,
-			validation: (Rule) => Rule.max(160).warning(),
+			validation: (Rule) => Rule.max(240).warning(),
 		}),
 		defineField({
 			name: 'slug',

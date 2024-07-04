@@ -19,7 +19,7 @@ export default async function PropertyList({
 	// predefinedFilters: Sanity.BlogCategory[]
 }>) {
 	const posts = await fetchSanity<Sanity.ListingPost[]>(
-		groq`*[_type == 'listing.post'][0...$limit]|order(publishDate desc){
+		groq`*[_type == 'listing.post'][0...$limit]|order(listedDate desc){
 			...,
 			categories[]->
 		}`,
@@ -28,7 +28,6 @@ export default async function PropertyList({
 			tags: ['posts'],
 		},
 	)
-	// console.log('posts:', posts)
 	return (
 		<section className="section space-y-8">
 			{intro && (

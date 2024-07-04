@@ -1,5 +1,6 @@
 import plugin from 'tailwindcss/plugin'
 import type { Config } from 'tailwindcss'
+const { nextui } = require('@nextui-org/react')
 
 const config: Config = {
 	darkMode: ['class'],
@@ -8,6 +9,7 @@ const config: Config = {
 		'./components/**/*.{ts,tsx}',
 		'./app/**/*.{ts,tsx}',
 		'./src/**/*.{ts,tsx}',
+		'./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
 	],
 	prefix: '',
 	theme: {
@@ -19,6 +21,11 @@ const config: Config = {
 			},
 		},
 		extend: {
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic':
+					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+			},
 			colors: {
 				ink: '#133B78',
 				canvas: '#fff',
@@ -90,6 +97,7 @@ const config: Config = {
 			addVariant('header-closed', 'body:has(#header-open:not(:checked)) &')
 		}),
 		require('tailwindcss-animate'),
+		nextui(),
 	],
 	safelist: [{ pattern: /action.*/ }, 'ghost'],
 } satisfies Config

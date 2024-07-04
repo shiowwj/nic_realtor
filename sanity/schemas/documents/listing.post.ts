@@ -66,7 +66,7 @@ export default defineType({
 			groups: [
 				{ name: 'Key Stats', default: true },
 				{ name: 'Size' },
-				{ name: 'Dates and Misc' },
+				{ title: 'Other Details', name: 'otherDetails' },
 			],
 			fields: [
 				defineField({
@@ -147,13 +147,13 @@ export default defineType({
 				}),
 				defineField({
 					name: 'yearOfTOP',
-					group: 'Dates and Misc',
+					group: 'otherDetails',
 					type: 'string',
 					description: 'Leave empty to not display Year Of TOP',
 				}),
 				defineField({
 					name: 'listedDate',
-					group: 'Dates and Misc',
+					group: 'otherDetails',
 					type: 'date',
 					description: 'Leave empty to not display Listed Date',
 				}),
@@ -203,7 +203,7 @@ export default defineType({
 			type: 'url',
 			group: 'photosAndVideos',
 			description:
-				'URL to marketing video (youtube), leave empty if not available',
+				'URL to marketing video (youtube only), leave empty if not available',
 		}),
 		defineField({
 			name: 'photos',
@@ -227,11 +227,6 @@ export default defineType({
 		// 		{ type: 'callout' },
 		// 	],
 		// }),
-		defineField({
-			name: 'publishDate',
-			type: 'date',
-			validation: (Rule) => Rule.required(),
-		}),
 
 		defineField({
 			name: 'contactForm',

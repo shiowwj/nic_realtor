@@ -10,6 +10,7 @@ export default function PropertyPreview({
 	post: Sanity.ListingPost
 }) {
 	// featureVideo
+	// console.log('list', post)
 	return (
 		<Link
 			className="group block rounded-lg border border-gray-300 bg-[#F6FAFF]"
