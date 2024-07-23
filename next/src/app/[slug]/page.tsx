@@ -4,11 +4,17 @@ import { modulesQuery } from '@/lib/sanity/queries'
 import { notFound } from 'next/navigation'
 import Modules from '@/ui/modules'
 import processMetadata from '@/lib/processMetadata'
+import ContactForm from '@/ui/modules/ContactForm'
 
 export default async function Page({ params }: Props) {
 	const page = await getPage(params)
 	if (!page) notFound()
-	return <Modules modules={page?.modules} page={page} />
+	return (
+		<>
+			<Modules modules={page?.modules} page={page} />
+			{page.contactForm && <ContactForm {...page.contactForm} />}
+		</>
+	)
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -41,7 +47,8 @@ async function getPage(params: Props['params']) {
 			metadata {
 				...,
 				'ogimage': image.asset->url
-			}
+			},
+            'contactForm':contactForm->contactForm
 		}`,
 		{
 			params: { slug: params.slug },

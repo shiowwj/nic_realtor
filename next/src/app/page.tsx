@@ -39,6 +39,6 @@ async function getPage() {
 		throw new Error(
 			"Missing 'page' document with metadata.slug 'index' in Sanity Studio",
 		)
-
+	// console.log('getPage', JSON.stringify(page, null, 2)) // Pretty print the JSON
 	return page
 }
