@@ -10,7 +10,7 @@ export default function TestimonialList({
 	testimonials: Sanity.Testimonial[]
 }>) {
 	return (
-		<section className="section space-y-8 text-center">
+		<section className="section space-y-16 text-left">
 			{intro && (
 				<header className="richtext">
 					<PortableText value={intro} />

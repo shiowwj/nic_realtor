@@ -11,7 +11,7 @@ export default async function Footer() {
 	const logoImage = logo?.image?.light || logo?.image?.default
 
 	return (
-		<footer className="bg-ink text-center text-canvas">
+		<footer className="py:12 bg-ink text-center text-canvas md:py-16 lg:py-24">
 			<div className="section border-b border-canvas/20">
 				<div className="mx-auto max-w-screen-xl space-y-8">
 					<div className="flex flex-wrap justify-between gap-x-12 gap-y-8">

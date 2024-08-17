@@ -11,8 +11,9 @@ import {
 	FaXTwitter,
 	FaYoutube,
 } from 'react-icons/fa6'
-import { FiExternalLink } from 'react-icons/fi'
+// import { FiExternalLink } from 'react-icons/fi'
 import { IoIosLink } from 'react-icons/io'
+import PropertyGuruLogo from './logos/propertyGuruLogo'
 
 export default async function Social({
 	className,
@@ -65,7 +66,7 @@ function Icon({
 	) : url?.includes('youtube.com') ? (
 		<FaYoutube {...props} />
 	) : url?.includes('propertyguru.com') ? (
-		<FiExternalLink {...props} />
+		<PropertyGuruLogo {...props} />
 	) : (
 		<IoIosLink {...props} />
 	)

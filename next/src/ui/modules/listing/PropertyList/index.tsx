@@ -29,9 +29,9 @@ export default async function PropertyList({
 		},
 	)
 	return (
-		<section className="section space-y-8">
+		<section className="section space-y-12">
 			{intro && (
-				<header className="richtext">
+				<header className="richtext max-w-2xl">
 					<PortableText value={intro} />
 				</header>
 			)}

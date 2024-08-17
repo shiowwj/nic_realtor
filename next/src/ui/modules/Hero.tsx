@@ -29,14 +29,14 @@ export default function Hero({
 		<section
 			className={cn(
 				hasImage &&
-					'grid overflow-hidden bg-ink text-canvas *:col-span-full *:row-span-full',
+					'grid overflow-hidden bg-transparent text-canvas *:col-span-full *:row-span-full',
 			)}
 		>
 			{bgImage?.asset && (
 				<picture>
 					<Source image={bgImageMobile} imageWidth={1200} />
 					<Img
-						className="size-full max-h-fold object-cover"
+						className="size-full max-h-fold object-cover opacity-80"
 						image={bgImage}
 						imageWidth={1800}
 						draggable={false}
