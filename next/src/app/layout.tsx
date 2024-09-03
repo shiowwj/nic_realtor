@@ -15,8 +15,11 @@ import { GoogleAnalytics } from '@/components/google-analytics'
 const font = Josefin_Sans({ subsets: ['latin'], weight: '400' })
 
 export const metadata: Metadata = {
-	icons: {
-		// icon: `https://fav.farm/🖤`,
+	// icons: {
+	// 	// icon: `https://fav.farm/🖤`,
+	// },
+	other: {
+		'google-site-verification': 'ygF7TY3ddRgHkIbdr6a2eiPd-VETQ_OgbU5DTDMqsP8',
 	},
 }
 
