@@ -10,6 +10,7 @@ import { Analytics } from '@vercel/analytics/react'
 import '@/styles/app.css'
 import { Josefin_Sans } from 'next/font/google'
 import { cn } from '@/lib/utils'
+import { GoogleAnalytics } from '@/components/google-analytics'
 
 const font = Josefin_Sans({ subsets: ['latin'], weight: '400' })
 
@@ -26,6 +27,7 @@ export default async function RootLayout({
 }) {
 	return (
 		<html lang="en">
+			<GoogleAnalytics />
 			{/* <GoogleTagManager gtmId='' /> */}
 			<body className={cn(font.className, 'bg-canvas text-ink')}>
 				<SkipToContent />
