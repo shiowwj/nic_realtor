@@ -11,7 +11,6 @@ import '@/styles/app.css'
 import { Josefin_Sans } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { GoogleAnalytics } from '@/components/google-analytics'
-import GoogleCaptchaWrapper from '@/ui/google-recaptcha/google-recaptcha-wrapper'
 
 const font = Josefin_Sans({ subsets: ['latin'], weight: '400' })
 
@@ -33,20 +32,18 @@ export default async function RootLayout({
 		<html lang="en">
 			<GoogleAnalytics />
 			{/* <GoogleTagManager gtmId='' /> */}
-			<GoogleCaptchaWrapper>
-				<body className={cn(font.className, 'bg-canvas text-ink')}>
-					<SkipToContent />
-					<Announcement />
-					<Header />
-					<main id="main-content" tabIndex={-1}>
-						{children}
-					</main>
-					<Footer />
+			<body className={cn(font.className, 'bg-canvas text-ink')}>
+				<SkipToContent />
+				<Announcement />
+				<Header />
+				<main id="main-content" tabIndex={-1}>
+					{children}
+				</main>
+				<Footer />
 
-					<Analytics />
-					{draftMode().isEnabled && <VisualEditing />}
-				</body>
-			</GoogleCaptchaWrapper>
+				<Analytics />
+				{draftMode().isEnabled && <VisualEditing />}
+			</body>
 		</html>
 	)
 }

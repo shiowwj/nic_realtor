@@ -1,34 +1,16 @@
 'use client'
 import { PortableText } from 'next-sanity'
-import React, { FormEvent, useCallback } from 'react'
+import React from 'react'
 import { useForm, ValidationError } from '@formspree/react'
-import {
-	GoogleReCaptchaProvider,
-	useGoogleReCaptcha,
-} from 'react-google-recaptcha-v3'
-// import GoogleCaptchaWrapper from '@/ui/google-recaptcha/google-recaptcha-wrapper'
-import { RECAPTCHA_SITE_KEY } from '@/lib/env'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 import { Loader2Icon } from 'lucide-react'
+import GoogleCaptchaWrapper from '../google-recaptcha/google-recaptcha-wrapper'
 
-const ContactFormMain = (contactFormProps: Partial<Sanity.ContactForm>) => {
-	const recaptchaKey: string | undefined = RECAPTCHA_SITE_KEY
+const RecaptchaContactForm = (props: Partial<Sanity.ContactForm>) => {
 	return (
-		<GoogleReCaptchaProvider
-			reCaptchaKey={recaptchaKey ?? 'NOT DEFINED'}
-			scriptProps={{
-				async: true,
-				defer: true,
-				appendTo: 'body',
-			}}
-			container={{
-				// element: 'recaptcha-container',
-				parameters: {
-					badge: 'bottomleft',
-				},
-			}}
-		>
-			<ContactForm {...contactFormProps} />
-		</GoogleReCaptchaProvider>
+		<GoogleCaptchaWrapper>
+			<ContactForm {...props} />
+		</GoogleCaptchaWrapper>
 	)
 }
 
@@ -38,22 +20,21 @@ const ContactForm = ({
 	successMessage,
 }: Partial<Sanity.ContactForm>) => {
 	const { executeRecaptcha } = useGoogleReCaptcha()
-	console.log('executeRecaptcha', executeRecaptcha)
-	const [state, handleSubmit] = useForm('xanwwjed')
-	console.log('state', state)
-	const onHandleSubmit = useCallback(
-		(e: any) => {
-			console.log('handle submist')
-			e.preventDefault()
-			if (!executeRecaptcha) {
-				console.log('Execute recaptcha not yet available')
-				return
-			}
-			console.log('executeRecaptcha 2', executeRecaptcha)
-			handleSubmit(e)
+
+	if (!executeRecaptcha) {
+		return null
+	}
+
+	const [state, handleSubmit] = useForm('xanwwjed', {
+		data: {
+			'g-recaptcha-response': executeRecaptcha,
 		},
-		[executeRecaptcha],
-	)
+	})
+
+	const onHandleSubmit = (e: any) => {
+		handleSubmit(e)
+	}
+
 	return (
 		<section className="section" id="contact">
 			<div className="section grid max-w-screen-lg items-center gap-12 gap-y-6 rounded bg-accent/5 md:grid-cols-[1fr,1fr]">
@@ -132,4 +113,4 @@ const ContactForm = ({
 	)
 }
 
-export default ContactForm
+export default RecaptchaContactForm
