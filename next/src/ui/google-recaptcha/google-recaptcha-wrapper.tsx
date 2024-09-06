@@ -8,15 +8,15 @@ export default function GoogleCaptchaWrapper({
 }: {
 	children: React.ReactNode
 }) {
-	const recaptchaKey: string | undefined = RECAPTCHA_SITE_KEY
+	const recaptchaKey: string = RECAPTCHA_SITE_KEY as string
 	return (
 		<GoogleReCaptchaProvider
-			reCaptchaKey={recaptchaKey ?? 'NOT DEFINED'}
-			scriptProps={{
-				async: true,
-				defer: true,
-				appendTo: 'body',
-			}}
+			reCaptchaKey={recaptchaKey}
+			// scriptProps={{
+			// 	async: true,
+			// 	defer: true,
+			// 	appendTo: 'body',
+			// }}
 			container={{
 				// element: 'recaptcha-container',
 				parameters: {
