@@ -1,9 +1,35 @@
 'use client'
 import { PortableText } from 'next-sanity'
-import React from 'react'
+import React, { FormEvent, useCallback } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
-import GoogleCaptchaWrapper from '@/ui/google-recaptcha/google-recaptcha-wrapper'
+import {
+	GoogleReCaptchaProvider,
+	useGoogleReCaptcha,
+} from 'react-google-recaptcha-v3'
+// import GoogleCaptchaWrapper from '@/ui/google-recaptcha/google-recaptcha-wrapper'
+import { RECAPTCHA_SITE_KEY } from '@/lib/env'
+
+const ContactFormMain = (contactFormProps: Partial<Sanity.ContactForm>) => {
+	const recaptchaKey: string | undefined = RECAPTCHA_SITE_KEY
+	return (
+		<GoogleReCaptchaProvider
+			reCaptchaKey={recaptchaKey ?? 'NOT DEFINED'}
+			scriptProps={{
+				async: true,
+				defer: true,
+				appendTo: 'body',
+			}}
+			container={{
+				// element: 'recaptcha-container',
+				parameters: {
+					badge: 'bottomleft',
+				},
+			}}
+		>
+			<ContactForm {...contactFormProps} />
+		</GoogleReCaptchaProvider>
+	)
+}
 
 const ContactForm = ({
 	title,
@@ -11,17 +37,29 @@ const ContactForm = ({
 	successMessage,
 }: Partial<Sanity.ContactForm>) => {
 	const { executeRecaptcha } = useGoogleReCaptcha()
+	console.log('executeRecaptcha', executeRecaptcha)
 	const [state, handleSubmit] = useForm('xanwwjed', {
 		data: {
 			'g-recaptcha-response': executeRecaptcha,
 		},
 	})
 
-	const onHandleSubmit = (e: any) => {
-		handleSubmit(e)
-	}
+	// const _onHandleSubmit = (e: any) => {
+	// 	console.log('onHandleSubmit', e)
+	// 	if (!executeRecaptcha) return
+	// 	handleSubmit(e)
+	// }
+
+	const onHandleSubmit = useCallback(
+		(e: any) => {
+			e.preventDefault()
+			if (!executeRecaptcha) return
+			handleSubmit(e)
+		},
+		[executeRecaptcha],
+	)
 	return (
-		<GoogleCaptchaWrapper>
+		<>
 			<section className="section" id="contact">
 				<div className="section grid max-w-screen-lg items-center gap-12 gap-y-6 rounded bg-accent/5 md:grid-cols-[1fr,1fr]">
 					<div className="flex flex-col gap-y-8">
@@ -32,7 +70,7 @@ const ContactForm = ({
 					</div>
 
 					{state.succeeded ? (
-						<div className="flex flex-row justify-center gap-y-8 rounded-lg border border-altAccent bg-white">
+						<div className="flex flex-row justify-center gap-y-8 rounded-lg border border-altAccent bg-white p-4">
 							<div className="richtext py-16">
 								<PortableText value={successMessage} />
 							</div>
@@ -91,8 +129,8 @@ const ContactForm = ({
 					)}
 				</div>
 			</section>
-		</GoogleCaptchaWrapper>
+		</>
 	)
 }
 
-export default ContactForm
+export default ContactFormMain
