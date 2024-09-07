@@ -55,7 +55,7 @@ export default function PropertyPreview({
 			</div>
 
 			<div className="mx-auto max-w-screen-xl p-4">
-				<div className="h3">{post.metadata.title}</div>
+				<div className="h3">{post.name}</div>
 
 				<div className="flex flex-wrap gap-x-4">
 					{post.propertyDetails.noOfBedrooms && (
