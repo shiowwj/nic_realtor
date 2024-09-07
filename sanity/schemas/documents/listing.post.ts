@@ -4,6 +4,7 @@ import { TbRulerMeasure } from 'react-icons/tb'
 import {
 	MRT_STATIONS,
 	POSTAL_DISTRICTS,
+	PROPERTY_STATUS,
 	PROPERTY_TYPE,
 	TENURE_TYPE,
 } from '../../src/constants/property'
@@ -46,6 +47,26 @@ export default defineType({
 			type: 'string',
 			group: 'propertyDetails',
 		}),
+
+		defineField({
+			name: 'status',
+			type: 'string',
+			group: 'propertyDetails',
+			options: {
+				list: PROPERTY_STATUS,
+			},
+			description: 'Select the status of the property',
+		}),
+
+		// defineField({
+		// 	name: 'tenure',
+		// 	type: 'string',
+		// 	group: 'Key Stats',
+		// 	options: {
+		// 		list: TENURE_TYPE,
+		// 	},
+		// 	description: 'Select the type of tenure for property',
+		// }),
 		defineField({
 			name: 'listingPrice',
 			type: 'number',

@@ -2,8 +2,6 @@
 
 // import { categoryStore } from '../store'
 // import PostPreview from '../PostPreview'
-import { useEffect } from 'react'
-import { usePathname } from 'next/navigation'
 import PropertyPreview from '../PropertyPreview'
 
 export default function PropertyList({
@@ -40,7 +38,6 @@ export default function PropertyList({
 	// if (!filtered.length) {
 	// 	return <div>No posts found...</div>
 	// }
-
 	return (
 		<ul {...props}>
 			{filtered?.map((post) => (

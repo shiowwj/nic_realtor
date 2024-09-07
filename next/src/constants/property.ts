@@ -47,6 +47,28 @@ export const TENURE_TYPE = [
 	{ title: '99 Years', value: '99_years' },
 ]
 
+export const PROPERTY_STATUS = [
+	{ title: 'For Sale', value: 'for_sale' },
+	{ title: 'For Rent', value: 'for_rent' },
+	{ title: 'Sold', value: 'sold' },
+	{ title: 'Rented', value: 'rented' },
+	{ title: 'Under Offer', value: 'under_offer' },
+	{ title: 'New Launch', value: 'new_launch' },
+	{ title: 'Off Market', value: 'off_market' },
+	{ title: 'Reserved', value: 'reserved' },
+	{ title: 'Exclusive', value: 'exclusive' },
+	// { title: 'Reduced', value: 'reduced' },
+	// { title: 'Withdrawn', value: 'withdrawn' },
+	// { title: 'Expired', value: 'expired' },
+	// { title: 'Cancelled', value: 'cancelled' },
+	// { title: 'Pending', value: 'pending' },
+	// { title: 'Completed', value: 'completed' },
+	// { title: 'Approved', value: 'approved' },
+	// { title: 'Rejected', value: 'rejected' },
+	// { title: 'Deleted', value: 'deleted' },
+	// { title: 'Draft', value: 'draft' },
+]
+
 export const MRT_STATIONS = [
 	{ title: 'Admiralty (NS10)', value: 'Admiralty_NS10' },
 	{ title: 'Aljunied (EW9)', value: 'Aljunied_EW9' },

@@ -26,7 +26,10 @@ export default async function Breadcrumbs({
 				))}
 
 				<Crumb position={(crumbs?.length || 0) + 2}>
-					{currentPage?.title || currentPage?.metadata.title}
+					{/* @ts-ignore */}
+					{currentPage?.name ||
+						currentPage?.title ||
+						currentPage?.metadata.title}
 				</Crumb>
 			</ol>
 		</nav>

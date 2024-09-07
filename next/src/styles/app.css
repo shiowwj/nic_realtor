@@ -172,6 +172,10 @@
 		@apply _btn frosted-glass text-balance rounded-md border border-transparent bg-gradient-to-br from-accent/90 to-accent text-white shadow hover:from-altAccent/90 hover:to-altAccent;
 	}
 
+	.action_disabled {
+		@apply _btn frosted-glass text-balance rounded-md border border-transparent bg-gradient-to-br from-background/90 to-background text-ink shadow hover:from-altAccent/90 hover:to-altAccent;
+	}
+
 	.action-outline {
 		@apply _btn frosted-glass text-balance rounded-md border border-accent/10 bg-gradient-to-br from-canvas/70 to-canvas text-accent hover:border-altAccent/15 hover:from-altAccent/90 hover:to-altAccent;
 	}

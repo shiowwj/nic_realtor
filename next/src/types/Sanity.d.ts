@@ -98,7 +98,16 @@ declare global {
 			name: string
 			listingPrice: number
 			address: string
-
+			status?:
+				| 'for_sale'
+				| 'for_rent'
+				| 'sold'
+				| 'rented'
+				| 'under_offer'
+				| 'new_launch'
+				| 'off_market'
+				| 'reserved'
+				| 'exclusive'
 			propertyDetails: {
 				noOfBedrooms: string
 				noOfBathooms: string

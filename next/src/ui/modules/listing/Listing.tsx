@@ -19,7 +19,7 @@ export default async function Post({
 			contactForm,
 		}`,
 	)
-	// console.log('listing', listing)
+
 	return (
 		<>
 			<div className="mx-auto max-w-screen-xl px-2">
