@@ -9,7 +9,7 @@ export default async function processMetadata(
 
 	const url = processUrl(page)
 	const { title, description, ogimage, noIndex } = page.metadata
-	// console.log('url', url)
+
 	return {
 		metadataBase: new URL(BASE_URL),
 		title,
@@ -30,5 +30,22 @@ export default async function processMetadata(
 				'application/rss+xml': '/blog/rss.xml',
 			},
 		},
+		keywords: [
+			'propertyproperlee',
+			'singapore property',
+			'real estate',
+			'stackhomes',
+			'propertylimbrothers',
+			'real estate broker',
+			'real estate consultant',
+			' real estate singapore',
+			'era',
+			'huttons',
+			'propnex',
+			'99.co',
+			'propertyvaluation',
+			'singapore real estate',
+			'property properly',
+		],
 	}
 }
